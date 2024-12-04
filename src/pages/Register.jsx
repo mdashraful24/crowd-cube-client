@@ -42,7 +42,24 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                console.log(result.user);
+                const newUser = { name, email, photo }
+                // save new user info to the database
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('user created to db', data);
+                        // if(data.insertedId){
+                        //     console.log('User created in db');
+                        // }
+                    })
+
             })
             .then(() => {
                 toast.success("Successfully Registered");

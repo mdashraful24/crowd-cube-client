@@ -8,6 +8,8 @@ import MyCampaigns from "../components/MyCampaigns";
 import MyDonations from "../components/MyDonations";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import DetailsPage from "../pages/DetailsPage";
+import UpdateCampaign from "../components/UpdateCampaign";
 
 const router = createBrowserRouter([
     {
@@ -17,21 +19,23 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/addCampaign')
             },
             {
                 path: "campaigns",
                 element: <AllCampaigns></AllCampaigns>,
             },
             {
-                path: "add-campaign",
-                element: <AddNewCampaign></AddNewCampaign>
+                path: "addCampaign",
+                element: <AddNewCampaign></AddNewCampaign>,
+                loader: () => fetch('http://localhost:5000/users')
             },
             {
-                path: "my-campaigns",
+                path: "myCampaign",
                 element: <MyCampaigns></MyCampaigns>
             },
             {
-                path: "my-donations",
+                path: "myDonations",
                 element: <MyDonations></MyDonations>
             },
             {
@@ -41,6 +45,15 @@ const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register></Register>
+            },
+            // {
+            //     path: "/campaign/:id",
+            //     element: <DetailsPage></DetailsPage>
+            // },
+            {
+                path: "updateCampaign/:id",
+                element: <UpdateCampaign></UpdateCampaign>,
+                loader: ({ params }) => fetch(`http://localhost:5000/addCampaign/${params.id}`)
             }
         ],
     },

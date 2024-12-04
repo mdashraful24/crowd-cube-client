@@ -5,9 +5,9 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/campaigns">All Campaigns</NavLink></li>
-        <li><NavLink to="/add-campaign">Add New Campaign</NavLink></li>
-        <li><NavLink to="/my-campaigns">My Campaigns</NavLink></li>
-        <li><NavLink to="/my-donations">My Donations</NavLink></li>
+        <li><NavLink to="/addCampaign">Add New Campaign</NavLink></li>
+        <li><NavLink to="/myCampaign">My Campaigns</NavLink></li>
+        <li><NavLink to="/myDonations">My Donations</NavLink></li>
     </>
 
     return (

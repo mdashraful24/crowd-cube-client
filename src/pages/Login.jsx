@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const { signInUser, handleGoogleSignIn } = useContext(AuthContext);
+    const { signInUser, setUser, handleGoogleSignIn } = useContext(AuthContext);
+    const [showPassWord, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
