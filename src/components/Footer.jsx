@@ -2,39 +2,39 @@ import instagram from '../../src/assets/instagram.png'
 
 const Footer = () => {
     return (
-        <div className="pb-2 shadow-inner">
-            <footer className="footer container mx-auto lg:place-items-center text-base-content p-10">
+        <div className="pb-2 shadow-inner border-t">
+            <footer className="footer container mx-auto md:justify-between lg:justify-evenly pt-10 px-8">
                 <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Projects</a>
-                    <a className="link link-hover">Donations</a>
-                    <a className="link link-hover">FAQ</a>
-                    <a className="link link-hover">Contact</a>
+                    <h6 className="text-lg uppercase font-bold">Services</h6>
+                    <a className="link link-hover text-base">Projects</a>
+                    <a className="link link-hover text-base">Donations</a>
+                    <a className="link link-hover text-base">FAQ</a>
+                    <a className="link link-hover text-base">Contact</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Careers</a>
-                    <a className="link link-hover">Blog</a>
+                    <h6 className="text-lg uppercase font-bold">Company</h6>
+                    <a className="link link-hover text-base">About us</a>
+                    <a className="link link-hover text-base">Careers</a>
+                    <a className="link link-hover text-base">Blog</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <h6 className="text-lg uppercase font-bold">Legal</h6>
+                    <a className="link link-hover text-base">Terms of use</a>
+                    <a className="link link-hover text-base">Privacy policy</a>
+                    <a className="link link-hover text-base">Cookie policy</a>
                 </nav>
             </footer>
-            <footer className="container mx-auto text-base-content border-t px-8 md:px-10 lg:px-24 py-4 flex flex-col-reverse md:text-center items-start md:items-center justify-between gap-5">
+            <footer className="container mx-auto text-base-content px-8 md:px-10 lg:px-24 py-4 flex flex-col-reverse md:text-center items-start md:items-center justify-between gap-5">
                 <aside className="grid-flow-col items-center">
                     <p>
-                        CrowdCube Funding Platform
+                        <span className="text-3xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide">CrowdCube</span>
                         <br />
                         Innovating solutions for the future since 1992
                         {/* Copyright */}
-                        <p>&copy; 2024 CateringConnects. All rights reserved.</p>
+                        <p>&copy; 2024, All rights reserved.</p>
                     </p>
                 </aside>
-                <nav className="md:place-self-center md:justify-self-end">
+                <nav className="md:place-self-center md:justify-self-end mt-2">
                     <div className="grid grid-flow-col gap-4">
                         <a>
                             <svg

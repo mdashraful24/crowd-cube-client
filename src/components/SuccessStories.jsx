@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const SuccessStories = () => {
     return (
-        <section className="my-20">
+        <section className="mt-20 mb-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title effect */}
                 <Fade direction="up" triggerOnce>
