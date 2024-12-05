@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify"; // Import react-toastify for toast notifications
 
 const DetailsPage = () => {
     const { id } = useParams(); // Get the id from the URL
     const [campaign, setCampaign] = useState(null);
+    const { user } = useContext(AuthContext);
+    const [hasDonated, setHasDonated] = useState(false); // State to track donation status
 
     useEffect(() => {
         // Fetch campaign data based on the id
@@ -16,6 +20,59 @@ const DetailsPage = () => {
                 console.error("Error fetching campaign data:", error);
             });
     }, [id]);
+
+    // Check if the user has already donated to this campaign
+    useEffect(() => {
+        if (user?.email && campaign?._id) {
+            fetch(`http://localhost:5000/myDonations?email=${user.email}`)
+                .then((res) => res.json())
+                .then((data) => {
+                    // Check if the campaign ID is in the list of donations
+                    const alreadyDonated = data.some((donation) => donation._id === campaign._id);
+                    setHasDonated(alreadyDonated);
+                })
+                .catch((error) => console.error("Error fetching donations:", error));
+        }
+    }, [user?.email, campaign?._id]);
+
+    const handleDonate = () => {
+        if (hasDonated) {
+            // Show toast message if the user already donated
+            toast.error("You've already donated to this campaign.");
+            return;
+        }
+
+        const donationData = {
+            campaignId: campaign._id, // Use `campaignId` for clarity
+            image: campaign.image,
+            title: campaign.title,
+            type: campaign.type,
+            description: campaign.description,
+            minDonation: campaign.minDonation,
+            deadline: campaign.deadline,
+            userEmail: user.email, // Use the current user's email
+            userName: user.displayName || "Anonymous", // Use the current user's name or default to "Anonymous"
+        };
+
+        fetch("http://localhost:5000/myDonations", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(donationData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                // After a successful donation, show a success toast
+                toast.success("Thank you for your donation!");
+                setHasDonated(true); // Mark as donated
+            })
+            .catch((error) => {
+                console.error("Error donating:", error);
+            });
+    };
+
 
     if (!campaign) {
         return <div>Loading...</div>;
@@ -43,7 +100,7 @@ const DetailsPage = () => {
                         <p><strong>Deadline:</strong> {new Date(campaign.deadline).toLocaleDateString()}</p>
                     </div>
                     <div className="mt-6">
-                        <button className="btn btn-primary w-full rounded-md">
+                        <button onClick={handleDonate} className="btn btn-primary w-full rounded-md">
                             Donate Now
                         </button>
                     </div>
