@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
