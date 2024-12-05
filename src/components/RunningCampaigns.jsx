@@ -71,7 +71,7 @@ const RunningCampaigns = () => {
                                 {isActive && (
                                     <div className="mt-4">
                                         <Link to={`campaign/${campaign._id}`}>
-                                            <button className="text-white w-full text-lg px-5 py-2 rounded-full bg-gradient-to-r from-[#9538E2] to-[#5c0c9e] shadow-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-red-700 hover:to-[#5c0c9e]">
+                                            <button className="text-white w-full text-lg px-5 py-2 rounded-full bg-[#3f0c69] shadow-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-red-700 hover:to-[#5c0c9e]">
                                                 See More
                                             </button>
                                         </Link>
