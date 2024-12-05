@@ -26,7 +26,7 @@ const HowItWorks = () => {
                         <img
                             src={peer}
                             alt="Impact"
-                            className="w-full  rounded-xl"
+                            className="w-full lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
@@ -43,7 +43,7 @@ const HowItWorks = () => {
                         <img
                             src={equity}
                             alt="Impact"
-                            className="w-full rounded-xl"
+                            className="w-full lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
@@ -60,7 +60,7 @@ const HowItWorks = () => {
                         <img
                             src={reward}
                             alt="Impact"
-                            className="w-full md:h-96 lg:h-40 rounded-xl"
+                            className="w-full md:h-96 lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
