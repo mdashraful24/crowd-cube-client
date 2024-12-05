@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import HowItWorks from "./HowItWorks";
 import RunningCampaigns from "./RunningCampaigns";
@@ -7,6 +8,10 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home | CrowdCube</title>
+            </Helmet>
+
             {/* Banner */}
             <Banner></Banner>
 
