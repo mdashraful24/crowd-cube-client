@@ -79,7 +79,7 @@ const UpdateCampaign = () => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-8 shadow-lg rounded-lg bg-white my-10">
+        <div className="max-w-3xl mx-auto p-8 shadow-lg rounded-lg my-10">
             <h2 className="text-2xl font-bold text-center mb-6">Update Campaign: {title}</h2>
             <form onSubmit={handleUpdateCamp}>
                 {/* Image/Thumbnail */}
@@ -172,7 +172,7 @@ const UpdateCampaign = () => {
                         type="email"
                         value={user?.email || ""}
                         readOnly
-                        className="w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
+                        className="w-full p-3 border rounded-lg cursor-not-allowed"
                     />
                 </div>
 
@@ -183,7 +183,7 @@ const UpdateCampaign = () => {
                         type="text"
                         value={user?.displayName || ""}
                         readOnly
-                        className="w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
+                        className="w-full p-3 border rounded-lg cursor-not-allowed"
                     />
                 </div>
 

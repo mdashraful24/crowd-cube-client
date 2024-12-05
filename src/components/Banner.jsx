@@ -1,6 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import image1 from '../../src/assets/crowdcube-team.png'
+import image1 from "../../src/assets/crowdfunding.jpg";
+import image2 from "../../src/assets/support.jpg";
+import image3 from "../../src/assets/impact.jpg";
 
 const Banner = () => {
     return (
@@ -8,7 +10,7 @@ const Banner = () => {
             <Carousel
                 infiniteLoop
                 useKeyboardArrows
-                // autoPlay
+                autoPlay
                 showThumbs={false}
                 showStatus={false}
                 showIndicators={true}
@@ -35,33 +37,61 @@ const Banner = () => {
                     </button>
                 )}
             >
-                <div>
+                {/* Slide 1 */}
+                <div className="relative">
                     <img
                         src={image1}
-                        alt="Banner 1"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg"
+                        alt="Crowdfunding"
+                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
+                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                        <div>
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                                Empower Ideas, Transform Lives
+                            </h2>
+                            <p className="text-white text-sm sm:text-lg">
+                                Start your crowdfunding journey to bring innovative projects to life and create meaningful impact.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div>
+
+                {/* Slide 2 */}
+                <div className="relative">
                     <img
-                        src="{image2}"
-                        alt="Banner 2"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg"
+                        src={image2}
+                        alt="Community"
+                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
+                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                        <div>
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                                Join a Supportive Community
+                            </h2>
+                            <p className="text-white text-sm sm:text-lg">
+                                Connect with like-minded individuals and back initiatives that align with your values.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div>
+
+                {/* Slide 3 */}
+                <div className="relative">
                     <img
-                        src="{image3}"
-                        alt="Banner 3"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg"
+                        src={image3}
+                        alt="Impact"
+                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
-                </div>
-                <div>
-                    <img
-                        src="{image4}"
-                        alt="Banner 3"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg"
-                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                        <div>
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                                Make a Lasting Impact
+                            </h2>
+                            <p className="text-white text-sm sm:text-lg">
+                                Every contribution helps dreams take flight—be a part of something extraordinary.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </Carousel>
         </div>

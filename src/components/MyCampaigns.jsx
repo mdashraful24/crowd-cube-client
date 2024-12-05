@@ -63,9 +63,9 @@ const MyCampaigns = () => {
         <div className="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-center mb-6">My Campaigns</h2>
             <div className="overflow-x-auto">
-                <table className="min-w-full table-auto border bg-white shadow-lg">
+                <table className="min-w-full table-auto border border-gray-400 shadow-lg">
                     <thead>
-                        <tr className="border-b">
+                        <tr className="border-b border-gray-400 uppercase tracking-wider">
                             <th className="p-4 text-center">No.</th>
                             <th className="p-4 text-center">Campaign Title</th>
                             <th className="p-4 text-center">Campaign Type</th>
@@ -76,8 +76,8 @@ const MyCampaigns = () => {
                     </thead>
                     <tbody>
                         {myCampaigns?.map((myCampaign, index) => (
-                            <tr key={myCampaign._id} className="border-b hover:bg-gray-100">
-                                <td className="px-6 py-4 text-sm text-gray-700 text-center">{index + 1}</td>
+                            <tr key={myCampaign._id} className="border-b border-gray-400 hover:bg-stone-100 hover:text-slate-900">
+                                <td className="px-6 py-4 text-center">{index + 1}</td>
                                 <td className="p-4 text-center">{myCampaign.title}</td>
                                 <td className="p-4 text-center">{myCampaign.type}</td>
                                 <td className="p-4 text-center">${myCampaign.minDonation}</td>

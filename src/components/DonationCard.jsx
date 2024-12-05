@@ -3,7 +3,7 @@ const DonationCard = ({ donation }) => {
 
     return (
         <div className="border rounded-lg shadow-lg p-4 hover:shadow-xl">
-            <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg mb-4" />
+            <img src={image} alt={title} className="w-full rounded-t-lg mb-4" />
             <h3 className="text-xl font-semibold mb-2">{title}</h3>
             <p className="text-sm text-gray-600 mb-2"><strong>Type:</strong> {type}</p>
             <p className="text-sm text-gray-600 mb-2"><strong>Description:</strong> {description}</p>

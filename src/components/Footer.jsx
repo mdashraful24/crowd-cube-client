@@ -2,7 +2,7 @@ import instagram from '../../src/assets/instagram.png'
 
 const Footer = () => {
     return (
-        <div className="bg-base-500 pb-2">
+        <div className="pb-2 shadow-inner">
             <footer className="footer container mx-auto lg:place-items-center text-base-content p-10">
                 <nav>
                     <h6 className="footer-title">Services</h6>

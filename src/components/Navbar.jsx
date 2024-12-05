@@ -2,16 +2,16 @@ import { useContext, useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import DarkLightTheme from "./DarkLightTheme";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
-    // console.log(import.meta.env.VITE_a)
 
     // Reset dropdownOpen when user changes
     useEffect(() => {
-        setDropdownOpen(false); // Close dropdown on user change
+        setDropdownOpen(false);
     }, [user]);
 
     // Sign out
@@ -37,12 +37,12 @@ const Navbar = () => {
     );
 
     return (
-        <div className="p-2 md:py-3 bg-gray-300">
+        <div className="p-2 md:py-3 shadow-md">
             <div className="container mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
                         <div className="dropdown">
-                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <div tabIndex={0} role="button" className="btn btn-ghost pl-0 lg:hidden">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-5"
@@ -65,14 +65,16 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <button
                                 href="/"
-                                className="text-2xl text-[#591a6a] font-bold"
+                                className="text-3xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide italic"
                             >
                                 CrowdCube
                             </button>
                         </div>
+
+
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="menu menu-horizontal px-1 text-base">
                             {links}
                         </ul>
                     </div>
@@ -106,10 +108,13 @@ const Navbar = () => {
                             </div>
                         ) : (
                             <>
-                                <Link to="/login" className="btn btn-primary mr-2">Login</Link>
-                                <Link to="/register" className="btn btn-secondary">Register</Link>
+                                <Link to="/login" className="btn btn-primary mr-3">Login</Link>
+                                    <Link to="/register" className="btn btn-success">Register</Link>
                             </>
                         )}
+                        <div className="pl-2 md:pl-4">
+                            <DarkLightTheme></DarkLightTheme>
+                        </div>
                     </div>
                 </div>
             </div>

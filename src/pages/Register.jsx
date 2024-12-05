@@ -86,7 +86,7 @@ const Register = () => {
     return (
         <div className="flex justify-center items-center my-12 px-5">
             {/* Register form */}
-            <div className="card bg-white w-full max-w-md shrink-0 py-8 border">
+            <div className="card w-full max-w-md shrink-0 py-8 border shadow-lg">
                 <h2 className="text-2xl font-semibold text-center">Register Now!!!</h2>
                 <form onSubmit={handleSubmit} className="card-body pb-3 md:px-11">
                     <div className="form-control">
