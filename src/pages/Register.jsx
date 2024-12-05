@@ -60,9 +60,9 @@ const Register = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log('user created to db', data);
+                        // console.log('user created to db', data);
                         // if(data.insertedId){
-                        //     console.log('User created in db');
+                            // console.log('User created in db');
                         // }
                     })
 
