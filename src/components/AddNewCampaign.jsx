@@ -13,12 +13,12 @@ const AddNewCampaign = () => {
         e.preventDefault();
 
         const form = e.target;
-        const image = form.image.value.trim();
-        const title = form.title.value.trim();
-        const type = form.type.value.trim();
-        const description = form.description.value.trim();
-        const minDonation = form.minDonation.value.trim();
-        const deadline = form.deadline.value.trim();
+        const image = form.image.value;
+        const title = form.title.value;
+        const type = form.type.value;
+        const description = form.description.value;
+        const minDonation = form.minDonation.value;
+        const deadline = form.deadline.value;
 
         // Collect campaign data
         const newCampaign = {

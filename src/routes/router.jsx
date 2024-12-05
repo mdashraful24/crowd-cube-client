@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DetailsPage from "../pages/DetailsPage";
 import UpdateCampaign from "../components/UpdateCampaign";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,25 +19,32 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/addCampaign')
+                element: <Home></Home>
             },
             {
                 path: "campaigns",
-                element: <AllCampaigns></AllCampaigns>,
+                element: <PrivateRoute>
+                    <AllCampaigns></AllCampaigns>
+                </PrivateRoute>
             },
             {
                 path: "addCampaign",
-                element: <AddNewCampaign></AddNewCampaign>,
+                element: <PrivateRoute>
+                    <AddNewCampaign></AddNewCampaign>
+                </PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/users')
             },
             {
                 path: "myCampaign",
-                element: <MyCampaigns></MyCampaigns>
+                element: <PrivateRoute>
+                    <MyCampaigns></MyCampaigns>
+                </PrivateRoute>
             },
             {
                 path: "myDonations",
-                element: <MyDonations></MyDonations>
+                element: <PrivateRoute>
+                    <MyDonations></MyDonations>
+                </PrivateRoute>
             },
             {
                 path: "login",
@@ -46,13 +54,18 @@ const router = createBrowserRouter([
                 path: "register",
                 element: <Register></Register>
             },
-            // {
-            //     path: "/campaign/:id",
-            //     element: <DetailsPage></DetailsPage>
-            // },
+            {
+                path: "campaign/:id",
+                element: <PrivateRoute>
+                    <DetailsPage></DetailsPage>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/running/${params.id}`)
+            },
             {
                 path: "updateCampaign/:id",
-                element: <UpdateCampaign></UpdateCampaign>,
+                element: <PrivateRoute>
+                    <UpdateCampaign></UpdateCampaign>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/addCampaign/${params.id}`)
             }
         ],

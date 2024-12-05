@@ -1,32 +1,47 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { auth } from "../firebase/firebase.init";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import app from "../firebase/firebase.init";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext();
+const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    // const [data, setData] = useState([]);
+    const [id, setId] = useState(null);
 
-
-    const createUser = (email, password) => {
+    // Create new user, login, log out, google sign in, update profile
+    const createNewUser = (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signInUser = (email, password) => {
+    const userLogin = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
-
-    const googleProvider = new GoogleAuthProvider();
-    const handleGoogleSignIn =() => {
-        return signInWithPopup(auth, googleProvider);
     }
 
     const logOut = () => {
         setLoading(true);
         return signOut(auth);
+    }
+
+    // const googleProvider = new GoogleAuthProvider();
+    // const handleGoogleSignIn = () => {
+    //     return signInWithPopup(auth, googleProvider);
+    // }
+    const googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({
+        prompt: "select_account",
+    });
+    
+    const handleGoogleSignIn = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const updateUserProfiles = (updatedData) => {
+        return updateProfile(auth.currentUser, updatedData);
     }
 
     // Auth
@@ -40,20 +55,90 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const userInfo = {
+    const authInfo = {
         user,
+        setUser,
+        createNewUser,
+        logOut,
+        userLogin,
         loading,
-        createUser,
-        signInUser,
+        updateUserProfiles,
+        setId,
+        id,
         handleGoogleSignIn,
-        logOut
     }
 
     return (
-        <AuthContext.Provider value={userInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
         </AuthContext.Provider>
     );
 };
 
 export default AuthProvider;
+
+
+
+
+// const googleProvider = new GoogleAuthProvider();
+// googleProvider.setCustomParameters({
+//     prompt: "select_account", // Ensures user always sees the account selection dialog
+// });
+// const handleGoogleSignIn = () => {
+//     return signInWithPopup(auth, googleProvider);
+// }
+
+
+
+
+
+
+
+
+
+
+
+// import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+// import { createContext, useState } from "react";
+// import { auth } from "../firebase/firebase.init";
+
+// export const AuthContext = createContext(null);
+
+// const AuthProvider = ({ children }) => {
+//     const [user, setUser] = useState(null);
+//     const [loading, setLoading] = useState(true);
+
+
+//     const createUser = (email, password) => {
+//         setLoading(true);
+//         return createUserWithEmailAndPassword(auth, email, password);
+//     }
+
+//     const signInUser = (email, password) => {
+//         setLoading(true);
+//         return signInWithEmailAndPassword(auth, email, password);
+//     }
+
+    
+
+//     const logOut = () => {
+//         setLoading(true);
+//         return signOut(auth);
+//     }
+
+//     const userInfo = {
+//         user,
+//         loading,
+//         createUser,
+//         signInUser,
+//         logOut
+//     }
+
+//     return (
+//         <AuthContext.Provider value={userInfo}>
+//             {children}
+//         </AuthContext.Provider>
+//     );
+// };
+
+// export default AuthProvider;
