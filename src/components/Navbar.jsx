@@ -70,8 +70,6 @@ const Navbar = () => {
                                 CrowdCube
                             </button>
                         </div>
-
-
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 text-base">
@@ -86,7 +84,7 @@ const Navbar = () => {
                                 onMouseLeave={() => setDropdownOpen(false)}
                             >
                                 <img
-                                    className="rounded-full w-12 h-12 object-cover cursor-pointer border p-1 bg-white"
+                                    className="rounded-full w-12 h-12 object-cover cursor-pointer hover:bg-gray-400 p-1"
                                     src={user?.photoURL}
                                     alt="User profile"
                                 />
@@ -112,7 +110,7 @@ const Navbar = () => {
                                     <Link to="/register" className="btn btn-success">Register</Link>
                             </>
                         )}
-                        <div className="pl-2 md:pl-4">
+                        <div className="pl-3 md:pl-5">
                             <DarkLightTheme></DarkLightTheme>
                         </div>
                     </div>

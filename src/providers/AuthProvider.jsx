@@ -8,7 +8,6 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    // const [data, setData] = useState([]);
     const [id, setId] = useState(null);
 
     // Create new user, login, log out, google sign in, update profile
@@ -31,11 +30,11 @@ const AuthProvider = ({ children }) => {
     // const handleGoogleSignIn = () => {
     //     return signInWithPopup(auth, googleProvider);
     // }
+    
     const googleProvider = new GoogleAuthProvider();
     googleProvider.setCustomParameters({
         prompt: "select_account",
     });
-    
     const handleGoogleSignIn = () => {
         return signInWithPopup(auth, googleProvider);
     }
@@ -82,7 +81,7 @@ export default AuthProvider;
 
 // const googleProvider = new GoogleAuthProvider();
 // googleProvider.setCustomParameters({
-//     prompt: "select_account", // Ensures user always sees the account selection dialog
+//     prompt: "select_account",
 // });
 // const handleGoogleSignIn = () => {
 //     return signInWithPopup(auth, googleProvider);

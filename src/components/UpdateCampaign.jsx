@@ -61,7 +61,7 @@ const UpdateCampaign = () => {
             return;
         }
 
-        fetch(`http://localhost:5000/addCampaign/${_id}`, {
+        fetch(`https://mw-assignments10-server.vercel.app/addCampaign/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

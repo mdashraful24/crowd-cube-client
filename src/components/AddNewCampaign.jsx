@@ -46,7 +46,7 @@ const AddNewCampaign = () => {
             return;
         }
 
-        fetch("http://localhost:5000/addCampaign", {
+        fetch("https://mw-assignments10-server.vercel.app/addCampaign", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
