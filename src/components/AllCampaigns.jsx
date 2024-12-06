@@ -49,7 +49,7 @@ const AllCampaigns = () => {
             <Helmet>
                 <title>All Campaign | CrowdCube</title>
             </Helmet>
-            
+
             <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">All Campaigns</h2>
             {/* Sort Button */}
             <div className="flex justify-center mb-8">
@@ -80,9 +80,7 @@ const AllCampaigns = () => {
                             >
                                 <td className="px-6 py-4 text-center">{index + 1}</td>
                                 <td className="px-6 py-4 text-center">{data.title}</td>
-                                <td className="px-6 py-4 text-center">
-                                    {data.type.charAt(0).toUpperCase() + data.type.slice(1)}
-                                </td>
+                                <td className="px-6 py-4 text-center capitalize">{data.type}</td>
                                 <td className="px-6 py-4 text-center">${data.minDonation}</td>
                                 <td>
                                     <div className="text-center">

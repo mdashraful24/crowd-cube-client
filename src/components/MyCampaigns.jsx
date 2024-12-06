@@ -68,7 +68,7 @@ const MyCampaigns = () => {
                 <title>My Campaigns | CrowdCube</title>
             </Helmet>
 
-            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">My Campaigns</h2>
+            <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">My Campaigns</h2>
             <div className="overflow-x-auto">
                 <table className="min-w-full table-auto border border-gray-400 shadow-lg">
                     <thead>
@@ -87,7 +87,7 @@ const MyCampaigns = () => {
                             <tr key={myCampaign._id} className="border-b border-gray-400 hover:bg-stone-100 hover:text-slate-900">
                                 <td className="px-6 py-4 text-center">{index + 1}</td>
                                 <td className="p-4 text-center">{myCampaign.title}</td>
-                                <td className="p-4 text-center">{myCampaign.type}</td>
+                                <td className="p-4 text-center capitalize">{myCampaign.type}</td>
                                 <td className="p-4 text-center">${myCampaign.minDonation}</td>
                                 <td className="p-4 text-center">{myCampaign.deadline}</td>
                                 <td className="p-4 text-center">{myCampaign.userEmail}</td>

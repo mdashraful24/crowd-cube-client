@@ -76,7 +76,7 @@ const AddNewCampaign = () => {
                 <title>Add New Campaign | CrowdCube</title>
             </Helmet>
             
-            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">Add New Campaign</h2>
+            <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">Add New Campaign</h2>
             <form onSubmit={handleSubmit}>
                 {/* Image/Thumbnail */}
                 <div className="form-group mb-4">
