@@ -44,7 +44,7 @@ const Banner = () => {
                         alt="Crowdfunding"
                         className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
                             <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
                                 Empower Ideas, Transform Lives
@@ -55,7 +55,6 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* Slide 2 */}
                 <div className="relative">
                     <img
@@ -63,7 +62,7 @@ const Banner = () => {
                         alt="Community"
                         className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
                             <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
                                 Join a Supportive Community
@@ -74,7 +73,6 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* Slide 3 */}
                 <div className="relative">
                     <img
@@ -82,13 +80,13 @@ const Banner = () => {
                         alt="Impact"
                         className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
                             <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
                                 Make a Lasting Impact
                             </h2>
                             <p className="text-white text-sm sm:text-lg">
-                                Every contribution helps dreams take flight—be a part of something extraordinary.
+                                Every contribution helps dreams take flight be a part of something extraordinary.
                             </p>
                         </div>
                     </div>
