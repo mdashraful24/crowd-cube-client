@@ -2,11 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
-import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-    const { createNewUser, setUser, updateUserProfiles, handleGoogleSignIn } = useContext(AuthContext);
+    const { createNewUser, setUser, updateUserProfiles } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [showPassWord, setShowPassword] = useState(false);
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Register = () => {
         const email = form.get("email");
         const photo = form.get("photo");
         const password = form.get("password");
-        // Conditions
+        
         if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || password.length < 6) {
             setError("Password must contain at least 6 characters, including one uppercase and one lowercase letter.");
             return;
@@ -59,7 +59,7 @@ const Register = () => {
                 });
             })
             .then(() => {
-                toast.success("Successfully Registered");
+                toast.success("Registered successfully.");
                 navigate("/");
             })
             .catch((error) => {
@@ -69,9 +69,14 @@ const Register = () => {
 
     return (
         <div className="flex justify-center items-center my-16 px-5">
-            {/* Register form */}
+            {/* Helmet */}
+            <Helmet>
+                <title>Register Now | CrowdCube</title>
+            </Helmet>
+
             <div className="card w-full max-w-md shrink-0 py-8 border rounded-xl shadow-lg">
                 <h2 className="text-2xl md:text-3xl font-bold text-center">Register Now</h2>
+                {/* Register form */}
                 <form onSubmit={handleSubmit} className="card-body pb-3 md:px-11">
                     <div className="form-control">
                         <label className="label">
@@ -134,16 +139,6 @@ const Register = () => {
                 <p className="text-center text-sm mt-2">
                     Already Have An Account? <Link to="/login" className="text-red-500 font-semibold hover:underline">Login</Link>
                 </p>
-                {/* Google button */}
-                {/* <div className="text-center w-10/12 mx-auto mt-5">
-                    <button
-                        onClick={handleGoogleSignInClickReg}
-                        className="btn w-full text-white font-medium bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 focus:outline-none focus:ring-2 focus:ring-red-400 shadow-md transition-all duration-200 border-none"
-                    >
-                        <FcGoogle />
-                        Sign in with Google
-                    </button>
-                </div> */}
             </div>
         </div>
     );
