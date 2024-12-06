@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const AllCampaigns = () => {
     const [info, setInfo] = useState([]);
-    const [loading, setLoading] = useState(true); // Loading state
+    const [loading, setLoading] = useState(true);
 
     // Data load
     useEffect(() => {
@@ -11,11 +12,11 @@ const AllCampaigns = () => {
             .then((res) => res.json())
             .then((data) => {
                 setInfo(data);
-                setLoading(false); // Set loading to false after data is fetched
+                setLoading(false);
             })
             .catch((error) => {
                 console.error("Error fetching campaigns:", error);
-                setLoading(false); // In case of an error, stop loading
+                setLoading(false);
             });
     }, []);
 
@@ -28,8 +29,13 @@ const AllCampaigns = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-10">
-            <h2 className="text-2xl font-bold text-center mb-6">All Campaigns: </h2>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-14 mb-20">
+            {/* Helmet */}
+            <Helmet>
+                <title>All Campaigns | CrowdCube</title>
+            </Helmet>
+
+            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">All Campaigns</h2>
             <div className="overflow-x-auto">
                 <table className="min-w-full border border-gray-400 rounded-lg">
                     <thead className="border-b border-gray-400">
@@ -49,9 +55,9 @@ const AllCampaigns = () => {
                             <th className="px-6 py-3">
                                 Deadline
                             </th>
-                            <th className="px-6 py-3">
+                            {/* <th className="px-6 py-3">
                                 User Mail
-                            </th>
+                            </th> */}
                             <th className="px-6 py-3">
                                 Actions
                             </th>
@@ -65,7 +71,7 @@ const AllCampaigns = () => {
                                 <td className="px-6 py-4 text-center">{data.type}</td>
                                 <td className="px-6 py-4 text-center">${data.minDonation}</td>
                                 <td className="px-6 py-4 text-center">{data.deadline}</td>
-                                <td className="px-6 py-4 text-center">{data.userEmail}</td>
+                                {/* <td className="px-6 py-4 text-center">{data.userEmail}</td> */}
                                 <td>
                                     <div className="text-center">
                                         <Link to={`/campaign/${data._id}`}>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import DonationCard from "./DonationCard";
+import { Helmet } from "react-helmet-async";
 
 // Component to display individual donation card
 // const DonationCard = ({ donation }) => {
@@ -101,7 +102,7 @@ import DonationCard from "./DonationCard";
 const MyDonations = () => {
     const { user } = useContext(AuthContext);
     const [myDonations, setMyDonations] = useState([]);
-    const [loading, setLoading] = useState(true); // Add loading state
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchUserDonations = async () => {
@@ -114,23 +115,27 @@ const MyDonations = () => {
                 } catch (error) {
                     console.error("Error fetching donations:", error);
                 } finally {
-                    setLoading(false); // Set loading to false after data is fetched
+                    setLoading(false);
                 }
             }
         };
-
         fetchUserDonations();
     }, [user?.email]);
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold text-center mb-8">My Donations</h2>
+        <div className="container mx-auto px-4 mt-14 mb-20">
+            {/* Helmet */}
+            <Helmet>
+                <title>My Donations | CrowdCube</title>
+            </Helmet>
+
+            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-12">My Donations</h2>
             {loading ? (
                 <div className="flex justify-center items-center min-h-screen">
                     <span className="loading loading-bars loading-lg"></span>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-10">
                     {myDonations.length > 0 ? (
                         myDonations.map((donation) => (
                             <DonationCard key={donation._id} donation={donation} />

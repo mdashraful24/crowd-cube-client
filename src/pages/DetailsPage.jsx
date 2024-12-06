@@ -245,41 +245,38 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const DetailsPage = () => {
-    const { id } = useParams(); // Get the id from the URL
+    const { id } = useParams();
     const [campaign, setCampaign] = useState(null);
     const { user } = useContext(AuthContext);
-    const [hasDonated, setHasDonated] = useState(false); // State to track donation status
-    const [loading, setLoading] = useState(true); // State to track loading
-    const [isDeadlinePassed, setIsDeadlinePassed] = useState(false); // State to track deadline status
+    const [hasDonated, setHasDonated] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [isDeadlinePassed, setIsDeadlinePassed] = useState(false);
 
     useEffect(() => {
-        // Fetch campaign data based on the id
         fetch(`http://localhost:5000/running/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setCampaign(data);
-                setLoading(false); // Set loading to false after data is fetched
+                setLoading(false);
 
-                // Check if the campaign deadline has passed
                 const deadlineDate = new Date(data.deadline);
                 const currentDate = new Date();
-                setIsDeadlinePassed(currentDate > deadlineDate); // Compare the current date with the deadline
+                setIsDeadlinePassed(currentDate > deadlineDate);
             })
             .catch((error) => {
                 console.error("Error fetching campaign data:", error);
-                setLoading(false); // Set loading to false in case of error
+                setLoading(false);
             });
     }, [id]);
 
-    // Check if the user has already donated to this campaign
     useEffect(() => {
         if (user?.email && campaign?._id) {
             fetch(`http://localhost:5000/myDonations?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    // Check if the campaign ID is in the list of donations
                     const alreadyDonated = data.some((donation) => donation.campaignId === campaign._id);
                     setHasDonated(alreadyDonated);
                 })
@@ -289,27 +286,24 @@ const DetailsPage = () => {
 
     const handleDonate = () => {
         if (hasDonated) {
-            // Show toast message if the user already donated
             toast.error("You've already donated to this campaign.");
             return;
         }
-
         if (isDeadlinePassed) {
-            // Show a toast message if the deadline has passed
             toast.error("Sorry, the donation deadline has passed for this campaign.");
             return;
         }
 
         const donationData = {
-            campaignId: campaign._id, // Use `campaignId` for clarity
+            campaignId: campaign._id,
             image: campaign.image,
             title: campaign.title,
             type: campaign.type,
             description: campaign.description,
             minDonation: campaign.minDonation,
             deadline: campaign.deadline,
-            userEmail: user.email, // Use the current user's email
-            userName: user.displayName || "Anonymous", // Use the current user's name or default to "Anonymous"
+            userEmail: user.email,
+            userName: user.displayName || "Anonymous",
         };
 
         fetch("http://localhost:5000/myDonations", {
@@ -321,9 +315,8 @@ const DetailsPage = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                // After a successful donation, show a success toast
                 toast.success("Thank you for your donation!");
-                setHasDonated(true); // Mark as donated
+                setHasDonated(true);
             })
             .catch((error) => {
                 console.error("Error donating:", error);
@@ -333,7 +326,6 @@ const DetailsPage = () => {
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-screen">
-                {/* Loading spinner */}
                 <span className="loading loading-bars loading-lg"></span>
             </div>
         );
@@ -345,8 +337,13 @@ const DetailsPage = () => {
 
     return (
         <section className="px-3 py-10">
-            <h2 className="text-center text-4xl mb-10">Details</h2>
-            <div className="container lg:max-w-screen-md mx-auto border hover:shadow-xl p-5">
+            {/* Helmet */}
+            <Helmet>
+                <title>Details | CrowdCube</title>
+            </Helmet>
+
+            <h2 className="text-center text-3xl md:text-4xl text-[#5c0c9e] font-bold mb-10">Campaign Details</h2>
+            <div className="container lg:max-w-screen-md mx-auto border rounded-xl hover:shadow-xl p-5">
                 {/* Campaign Image */}
                 <div className="mb-6">
                     <img
@@ -358,8 +355,8 @@ const DetailsPage = () => {
                 {/* Campaign Details */}
                 <div>
                     <h2 className="text-3xl font-semibold">{campaign.title}</h2>
-                    <p className="text-lg text-gray-600 mt-2">{campaign.description}</p>
-                    <div className="mt-4">
+                    <p className="text-lg mt-2"><strong>Description:</strong> {campaign.description}</p>
+                    <div className="mt-2">
                         <p><strong>Type:</strong> {campaign.type}</p>
                         <p><strong>Min Donation:</strong> ${campaign.minDonation}</p>
                         <p><strong>Deadline:</strong> {new Date(campaign.deadline).toLocaleDateString()}</p>
@@ -367,7 +364,7 @@ const DetailsPage = () => {
                     <div className="mt-6">
                         <button
                             onClick={handleDonate}
-                            className="btn btn-primary w-full rounded-md"
+                            className="btn text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all duration-200 w-full rounded-md"
                         >
                             Donate Now
                         </button>

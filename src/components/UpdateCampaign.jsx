@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const UpdateCampaign = () => {
     const { user } = useContext(AuthContext);
@@ -20,7 +21,6 @@ const UpdateCampaign = () => {
         const minDonation = form.minDonation.value;
         const deadline = form.deadline.value.trim();
 
-        // Collect campaign data
         const updatedCampaign = {
             image,
             title,
@@ -32,17 +32,13 @@ const UpdateCampaign = () => {
             userName: user?.displayName,
         };
 
-        // console.log("Campaign Data:", newCampaign);
-        // toast.success("Campaign added successfully!");
-
-        // Validate inputs
         if (!image || !title || !type || !description || !minDonation || !deadline) {
             toast.error("All fields are required!");
             return;
         }
 
         try {
-            new URL(image); // Validate image URL
+            new URL(image);
         } catch {
             toast.error("Invalid Image URL!");
             return;
@@ -53,7 +49,6 @@ const UpdateCampaign = () => {
             return;
         }
 
-        // send data to the server
         fetch(`http://localhost:5000/addCampaign/${_id}`, {
             method: 'PUT',
             headers: {
@@ -63,7 +58,6 @@ const UpdateCampaign = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'success!',
@@ -73,18 +67,19 @@ const UpdateCampaign = () => {
                     })
                 }
             })
-
-        // Reset form
-        // form.reset();
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-8 shadow-lg rounded-lg my-10">
-            <h2 className="text-2xl font-bold text-center mb-6">Update Campaign: {title}</h2>
+        <div className="max-w-3xl mx-auto p-8 shadow-lg border rounded-xl mt-14 mb-20">
+            {/* Helmet */}
+            <Helmet>
+                <title>Update Campaign | CrowdCube</title>
+            </Helmet>
+
+            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">Update Campaign</h2>
             <form onSubmit={handleUpdateCamp}>
-                {/* Image/Thumbnail */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Image/Thumbnail (URL)</label>
+                    <label className="block mb-2">Image/Thumbnail (URL)</label>
                     <input
                         type="text"
                         name="image"
@@ -97,7 +92,7 @@ const UpdateCampaign = () => {
 
                 {/* Campaign Title */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Campaign Title</label>
+                    <label className="block mb-2">Campaign Title</label>
                     <input
                         type="text"
                         name="title"
@@ -110,7 +105,7 @@ const UpdateCampaign = () => {
 
                 {/* Campaign Type */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Campaign Type</label>
+                    <label className="block mb-2">Campaign Type</label>
                     <select
                         name="type"
                         className="w-full p-3 border rounded-lg"
@@ -129,7 +124,7 @@ const UpdateCampaign = () => {
 
                 {/* Description */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Description</label>
+                    <label className="block mb-2">Description</label>
                     <textarea
                         name="description"
                         defaultValue={description}
@@ -142,7 +137,7 @@ const UpdateCampaign = () => {
 
                 {/* Minimum Donation */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Minimum Donation Amount</label>
+                    <label className="block mb-2">Minimum Donation Amount</label>
                     <input
                         type="number"
                         name="minDonation"
@@ -155,7 +150,7 @@ const UpdateCampaign = () => {
 
                 {/* Deadline */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">Deadline</label>
+                    <label className="block mb-2">Deadline</label>
                     <input
                         type="date"
                         name="deadline"
@@ -167,7 +162,7 @@ const UpdateCampaign = () => {
 
                 {/* User Email */}
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 mb-2">User Email</label>
+                    <label className="block mb-2">User Email</label>
                     <input
                         type="email"
                         value={user?.email || ""}
@@ -178,7 +173,7 @@ const UpdateCampaign = () => {
 
                 {/* User Name */}
                 <div className="form-group mb-6">
-                    <label className="block text-gray-700 mb-2">User Name</label>
+                    <label className="block mb-2">User Name</label>
                     <input
                         type="text"
                         value={user?.displayName || ""}
