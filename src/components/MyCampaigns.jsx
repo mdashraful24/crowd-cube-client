@@ -91,7 +91,7 @@ const MyCampaigns = () => {
                                 <td className="p-4 text-center">${myCampaign.minDonation}</td>
                                 <td className="p-4 text-center">{myCampaign.deadline}</td>
                                 <td className="p-4 text-center">{myCampaign.userEmail}</td>
-                                <td className="p-4 lg:pr-0 text-center">
+                                <td className="p-4 text-center">
                                     <div className="flex flex-row justify-center items-center gap-3">
                                         <Link to={`/updateCampaign/${myCampaign._id}`}>
                                             <button

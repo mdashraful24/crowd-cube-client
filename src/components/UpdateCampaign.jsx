@@ -1,83 +1,324 @@
+// import { useContext } from "react";
+// import { useLoaderData, useNavigate } from "react-router-dom";
+// import Swal from "sweetalert2";
+// import { AuthContext } from "../providers/AuthProvider";
+// import { Helmet } from "react-helmet-async";
+
+// const UpdateCampaign = () => {
+//     const { user } = useContext(AuthContext);
+// const navigate = useNavigate();
+//     const updateCamp = useLoaderData();
+//     const { _id, image, title, type, description, minDonation, deadline } = updateCamp;
+
+//     const handleUpdateCamp = (e) => {
+//         e.preventDefault();
+
+//         const form = e.target;
+//         const image = form.image.value;
+//         const title = form.title.value;
+//         const type = form.type.value;
+//         const description = form.description.value;
+//         const minDonation = form.minDonation.value;
+//         const deadline = form.deadline.value;
+
+//         const updatedCampaign = {
+//             image,
+//             title,
+//             type,
+//             description,
+//             minDonation,
+//             deadline,
+//             userEmail: user?.email,
+//             userName: user?.displayName,
+//         };
+
+//         if (!image || !title || !type || !description || !minDonation || !deadline) {
+//             toast.error("All fields are required!");
+//             return;
+//         }
+
+//         try {
+//             new URL(image);
+//         } catch {
+//             toast.error("Invalid Image URL!");
+//             return;
+//         }
+
+//         if (parseFloat(minDonation) <= 0) {
+//             toast.error("Minimum donation amount must be greater than 0.");
+//             return;
+//         }
+
+//         fetch(`http://localhost:5000/addCampaign/${_id}`, {
+//             method: "PUT",
+//             headers: {
+//                 "content-type": "application/json",
+//             },
+//             body: JSON.stringify(updatedCampaign),
+//         })
+//             .then((res) => res.json())
+//             .then((data) => {
+//                 if (data.modifiedCount > 0) {
+//                     Swal.fire({
+//                         title: "Success!",
+//                         text: "Campaign updated successfully",
+//                         icon: "success",
+//                         confirmButtonText: "OK",
+//                     }).then(() => {
+//                         navigate("/myCampaign");
+//                     });
+//                 }
+//             })
+//             .catch((error) => {
+//                 Swal.fire({
+//                     title: "Error!",
+//                     text: "Failed to update campaign.",
+//                     icon: "error",
+//                 });
+//                 console.error(error);
+//             });
+//     };
+
+//     return (
+//         <div className="max-w-3xl mx-auto p-8 shadow-lg border rounded-xl mt-14 mb-20">
+//             {/* Helmet */}
+//             <Helmet>
+//                 <title>Update Campaign | CrowdCube</title>
+//             </Helmet>
+
+//             <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">Update Campaign</h2>
+//             <form onSubmit={handleUpdateCamp}>
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Image/Thumbnail (URL)</label>
+//                     <input
+//                         type="text"
+//                         name="image"
+//                         defaultValue={image}
+//                         className="w-full p-3 border rounded-lg"
+//                         placeholder="Enter image URL"
+//                         required
+//                     />
+//                 </div>
+
+//                 {/* Campaign Title */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Campaign Title</label>
+//                     <input
+//                         type="text"
+//                         name="title"
+//                         defaultValue={title}
+//                         className="w-full p-3 border rounded-lg"
+//                         placeholder="Enter campaign title"
+//                         required
+//                     />
+//                 </div>
+
+//                 {/* Campaign Type */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Campaign Type</label>
+//                     <select
+//                         name="type"
+//                         className="w-full p-3 border rounded-lg"
+//                         defaultValue={type}
+//                         required
+//                     >
+//                         <option value="" disabled>
+//                             Select a type
+//                         </option>
+//                         <option value="personal issue">Personal Issue</option>
+//                         <option value="startup">Startup</option>
+//                         <option value="business">Business</option>
+//                         <option value="creative ideas">Creative Ideas</option>
+//                     </select>
+//                 </div>
+
+//                 {/* Description */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Description</label>
+//                     <textarea
+//                         name="description"
+//                         defaultValue={description}
+//                         className="w-full p-3 border rounded-lg"
+//                         placeholder="Enter campaign description"
+//                         rows="4"
+//                         required
+//                     ></textarea>
+//                 </div>
+
+//                 {/* Minimum Donation */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Minimum Donation Amount</label>
+//                     <input
+//                         type="text"
+//                         name="minDonation"
+//                         defaultValue={minDonation}
+//                         className="w-full p-3 border rounded-lg"
+//                         placeholder="Enter minimum donation amount"
+//                         required
+//                     />
+//                 </div>
+
+//                 {/* Deadline */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">Deadline</label>
+//                     <input
+//                         type="date"
+//                         name="deadline"
+//                         defaultValue={deadline}
+//                         className="w-full p-3 border rounded-lg"
+//                         required
+//                     />
+//                 </div>
+
+//                 {/* User Email */}
+//                 <div className="form-group mb-4">
+//                     <label className="block mb-2">User Email</label>
+//                     <input
+//                         type="email"
+//                         value={user?.email || ""}
+//                         readOnly
+//                         className="w-full p-3 border rounded-lg cursor-not-allowed"
+//                     />
+//                 </div>
+
+//                 {/* User Name */}
+//                 <div className="form-group mb-6">
+//                     <label className="block mb-2">User Name</label>
+//                     <input
+//                         type="text"
+//                         value={user?.displayName || ""}
+//                         readOnly
+//                         className="w-full p-3 border rounded-lg cursor-not-allowed"
+//                     />
+//                 </div>
+
+//                 {/* Submit Button */}
+//                 <button
+//                     type="submit"
+//                     className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
+//                 >
+//                     Update Campaign
+//                 </button>
+//             </form>
+//         </div>
+//     );
+// };
+
+// export default UpdateCampaign;
+
+
+
+
+
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const UpdateCampaign = () => {
     const { user } = useContext(AuthContext);
-
     const updateCamp = useLoaderData();
     const { _id, image, title, type, description, minDonation, deadline } = updateCamp;
+
+    const navigate = useNavigate();
 
     const handleUpdateCamp = (e) => {
         e.preventDefault();
 
         const form = e.target;
-        const image = form.image.value.trim();
-        const title = form.title.value.trim();
-        const type = form.type.value.trim();
-        const description = form.description.value.trim();
-        const minDonation = form.minDonation.value;
-        const deadline = form.deadline.value.trim();
+        const updatedImage = form.image.value.trim();
+        const updatedTitle = form.title.value.trim();
+        const updatedType = form.type.value.trim();
+        const updatedDescription = form.description.value.trim();
+        const updatedMinDonation = form.minDonation.value;
+        const updatedDeadline = form.deadline.value.trim();
 
         const updatedCampaign = {
-            image,
-            title,
-            type,
-            description,
-            minDonation,
-            deadline,
+            image: updatedImage,
+            title: updatedTitle,
+            type: updatedType,
+            description: updatedDescription,
+            minDonation: updatedMinDonation,
+            deadline: updatedDeadline,
             userEmail: user?.email,
             userName: user?.displayName,
         };
 
-        if (!image || !title || !type || !description || !minDonation || !deadline) {
+        const isChanged =
+            updatedImage !== image ||
+            updatedTitle !== title ||
+            updatedType !== type ||
+            updatedDescription !== description ||
+            updatedMinDonation !== String(minDonation) ||
+            updatedDeadline !== deadline;
+
+        if (!isChanged) {
+            toast.error("No changes detected. Please update the form before submitting.");
+            return;
+        }
+
+        if (!updatedImage || !updatedTitle || !updatedType || !updatedDescription || !updatedMinDonation || !updatedDeadline) {
             toast.error("All fields are required!");
             return;
         }
 
         try {
-            new URL(image);
+            new URL(updatedImage);
         } catch {
             toast.error("Invalid Image URL!");
             return;
         }
 
-        if (parseFloat(minDonation) <= 0) {
+        if (parseFloat(updatedMinDonation) <= 0) {
             toast.error("Minimum donation amount must be greater than 0.");
             return;
         }
 
         fetch(`http://localhost:5000/addCampaign/${_id}`, {
-            method: 'PUT',
+            method: "PUT",
             headers: {
-                'content-type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(updatedCampaign)
+            body: JSON.stringify(updatedCampaign),
         })
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
-                        title: 'success!',
-                        text: 'Campaign updated successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
+                        title: "Success!",
+                        text: "Campaign updated successfully",
+                        icon: "success",
+                        confirmButtonText: "OK",
+                    }).then(() => {
+                        navigate("/myCampaign");
+                    });
+                } else {
+                    toast.error("No changes were made to the campaign.");
                 }
             })
+            .catch((error) => {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Failed to update the campaign.",
+                    icon: "error",
+                });
+                console.error(error);
+            });
     };
 
     return (
         <div className="max-w-3xl mx-auto p-8 shadow-lg border rounded-xl mt-14 mb-20">
-            {/* Helmet */}
             <Helmet>
                 <title>Update Campaign | CrowdCube</title>
             </Helmet>
 
-            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">Update Campaign</h2>
+            <h2 className="text-3xl md:text-4xl text-[#5c0c9e] font-bold text-center mb-10">
+                Update Campaign
+            </h2>
             <form onSubmit={handleUpdateCamp}>
+                {/* Form Fields */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Image/Thumbnail (URL)</label>
                     <input
@@ -89,8 +330,6 @@ const UpdateCampaign = () => {
                         required
                     />
                 </div>
-
-                {/* Campaign Title */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Campaign Title</label>
                     <input
@@ -102,8 +341,6 @@ const UpdateCampaign = () => {
                         required
                     />
                 </div>
-
-                {/* Campaign Type */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Campaign Type</label>
                     <select
@@ -121,8 +358,6 @@ const UpdateCampaign = () => {
                         <option value="creative ideas">Creative Ideas</option>
                     </select>
                 </div>
-
-                {/* Description */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Description</label>
                     <textarea
@@ -134,12 +369,10 @@ const UpdateCampaign = () => {
                         required
                     ></textarea>
                 </div>
-
-                {/* Minimum Donation */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Minimum Donation Amount</label>
                     <input
-                        type="number"
+                        type="text"
                         name="minDonation"
                         defaultValue={minDonation}
                         className="w-full p-3 border rounded-lg"
@@ -147,8 +380,6 @@ const UpdateCampaign = () => {
                         required
                     />
                 </div>
-
-                {/* Deadline */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Deadline</label>
                     <input
@@ -159,8 +390,6 @@ const UpdateCampaign = () => {
                         required
                     />
                 </div>
-
-                {/* User Email */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">User Email</label>
                     <input
@@ -170,9 +399,7 @@ const UpdateCampaign = () => {
                         className="w-full p-3 border rounded-lg cursor-not-allowed"
                     />
                 </div>
-
-                {/* User Name */}
-                <div className="form-group mb-6">
+                <div className="form-group mb-4">
                     <label className="block mb-2">User Name</label>
                     <input
                         type="text"
@@ -182,7 +409,6 @@ const UpdateCampaign = () => {
                     />
                 </div>
 
-                {/* Submit Button */}
                 <button
                     type="submit"
                     className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"

@@ -53,12 +53,6 @@ const AllCampaigns = () => {
                                 Min Donation
                             </th>
                             <th className="px-6 py-3">
-                                Deadline
-                            </th>
-                            {/* <th className="px-6 py-3">
-                                User Mail
-                            </th> */}
-                            <th className="px-6 py-3">
                                 Actions
                             </th>
                         </tr>
@@ -70,12 +64,10 @@ const AllCampaigns = () => {
                                 <td className="px-6 py-4 text-center">{data.title}</td>
                                 <td className="px-6 py-4 text-center">{data.type}</td>
                                 <td className="px-6 py-4 text-center">${data.minDonation}</td>
-                                <td className="px-6 py-4 text-center">{data.deadline}</td>
-                                {/* <td className="px-6 py-4 text-center">{data.userEmail}</td> */}
                                 <td>
                                     <div className="text-center">
                                         <Link to={`/campaign/${data._id}`}>
-                                            <td className="lg:px-6 py-4">
+                                            <td>
                                                 <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 hover:scale-105 transition-all duration-300">
                                                     See More
                                                 </button>

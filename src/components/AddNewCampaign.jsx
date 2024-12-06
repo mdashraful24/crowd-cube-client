@@ -89,7 +89,6 @@ const AddNewCampaign = () => {
                         required
                     />
                 </div>
-
                 {/* Campaign Title */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Campaign Title</label>
@@ -101,7 +100,6 @@ const AddNewCampaign = () => {
                         required
                     />
                 </div>
-
                 {/* Campaign Type */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Campaign Type</label>
@@ -120,7 +118,6 @@ const AddNewCampaign = () => {
                         <option value="creative ideas">Creative Ideas</option>
                     </select>
                 </div>
-
                 {/* Description */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Description</label>
@@ -132,19 +129,17 @@ const AddNewCampaign = () => {
                         required
                     ></textarea>
                 </div>
-
                 {/* Minimum Donation */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Minimum Donation Amount</label>
                     <input
-                        type="number"
+                        type="text"
                         name="minDonation"
                         className="w-full p-3 border rounded-lg"
                         placeholder="Enter minimum donation amount"
                         required
                     />
                 </div>
-
                 {/* Deadline */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">Deadline</label>
@@ -155,7 +150,6 @@ const AddNewCampaign = () => {
                         required
                     />
                 </div>
-
                 {/* User Email */}
                 <div className="form-group mb-4">
                     <label className="block mb-2">User Email</label>
@@ -166,7 +160,6 @@ const AddNewCampaign = () => {
                         className="w-full p-3 border rounded-lg cursor-not-allowed"
                     />
                 </div>
-
                 {/* User Name */}
                 <div className="form-group mb-6">
                     <label className="block mb-2">User Name</label>
@@ -177,7 +170,6 @@ const AddNewCampaign = () => {
                         className="w-full p-3 border rounded-lg cursor-not-allowed"
                     />
                 </div>
-
                 {/* Submit Button */}
                 <button
                     type="submit"
