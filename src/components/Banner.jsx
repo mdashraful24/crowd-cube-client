@@ -22,7 +22,7 @@ const Banner = () => {
                 stopOnHover
                 renderArrowPrev={(clickHandler) => (
                     <button
-                        className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10"
+                        className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10 hidden sm:block"
                         onClick={clickHandler}
                     >
                         &lt;
@@ -30,7 +30,7 @@ const Banner = () => {
                 )}
                 renderArrowNext={(clickHandler) => (
                     <button
-                        className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10"
+                        className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg z-10 hidden sm:block"
                         onClick={clickHandler}
                     >
                         &gt;
@@ -46,7 +46,7 @@ const Banner = () => {
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Empower Ideas, Transform Lives
                             </h2>
                             <p className="text-white text-sm sm:text-lg">
@@ -64,7 +64,7 @@ const Banner = () => {
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Join a Supportive Community
                             </h2>
                             <p className="text-white text-sm sm:text-lg">
@@ -82,7 +82,7 @@ const Banner = () => {
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Make a Lasting Impact
                             </h2>
                             <p className="text-white text-sm sm:text-lg">

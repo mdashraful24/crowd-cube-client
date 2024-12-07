@@ -5,7 +5,7 @@ import reward from '../../src/assets/reward.jpg'
 const HowItWorks = () => {
     return (
         <section className="px-3">
-            <div className="container mx-auto py-8 md:px-8 px-4 border border-[#5c0c9e] rounded-xl">
+            <div className="container mx-auto py-4 md:py-6 md:px-6 px-4 border border-[#5c0c9e] rounded-xl">
                 <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-8">How CrowdCube Works??</h2>
                 <div className="text-lg mb-6 text-justify space-y-3">
                     <p>
@@ -26,7 +26,7 @@ const HowItWorks = () => {
                         <img
                             src={peer}
                             alt="Impact"
-                            className="w-full lg:h-72 object-cover rounded-xl"
+                            className="w-full h-60 md:h-96 lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
@@ -43,7 +43,7 @@ const HowItWorks = () => {
                         <img
                             src={equity}
                             alt="Impact"
-                            className="w-full lg:h-72 object-cover rounded-xl"
+                            className="w-full h-60 md:h-96 lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
@@ -60,7 +60,7 @@ const HowItWorks = () => {
                         <img
                             src={reward}
                             alt="Impact"
-                            className="w-full md:h-96 lg:h-72 object-cover rounded-xl"
+                            className="w-full h-60 md:h-96 lg:h-72 object-cover rounded-xl"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-4 rounded-xl">
                             <div>
