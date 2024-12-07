@@ -62,7 +62,7 @@ const MyCampaigns = () => {
     }
 
     return (
-        <div className="container mx-auto mt-14 mb-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto mt-10 md:mt-14 mb-20 px-4 sm:px-6 lg:px-8">
             {/* Helmet */}
             <Helmet>
                 <title>My Campaigns | CrowdCube</title>

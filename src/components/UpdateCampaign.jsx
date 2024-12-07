@@ -94,113 +94,114 @@ const UpdateCampaign = () => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-8 shadow-lg border rounded-xl mt-14 mb-20">
-            <Helmet>
-                <title>Update Campaign | CrowdCube</title>
-            </Helmet>
+        <div className="px-3 mt-10 md:mt-14 mb-20">
+            <div className="max-w-3xl mx-auto p-5 md:p-8 shadow-lg border rounded-xl">
+                <Helmet>
+                    <title>Update Campaign | CrowdCube</title>
+                </Helmet>
 
-            <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">
-                Update Campaign
-            </h2>
-            <form onSubmit={handleUpdateCamp}>
-                {/* Form Fields */}
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Image/Thumbnail (URL)</label>
-                    <input
-                        type="text"
-                        name="image"
-                        defaultValue={image}
-                        className="w-full p-3 border rounded-lg"
-                        placeholder="Enter image URL"
-                        required
-                    />
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Campaign Title</label>
-                    <input
-                        type="text"
-                        name="title"
-                        defaultValue={title}
-                        className="w-full p-3 border rounded-lg"
-                        placeholder="Enter campaign title"
-                        required
-                    />
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Campaign Type</label>
-                    <select
-                        name="type"
-                        className="w-full p-3 border rounded-lg"
-                        defaultValue={type}
-                        required
-                    >
-                        <option value="" disabled>
-                            Select a type
-                        </option>
-                        <option value="personal issue">Personal Issue</option>
-                        <option value="startup">Startup</option>
-                        <option value="business">Business</option>
-                        <option value="creative ideas">Creative Ideas</option>
-                    </select>
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Description</label>
-                    <textarea
-                        name="description"
-                        defaultValue={description}
-                        className="w-full p-3 border rounded-lg"
-                        placeholder="Enter campaign description"
-                        rows="4"
-                        required
-                    ></textarea>
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Minimum Donation Amount</label>
-                    <input
-                        type="text"
-                        name="minDonation"
-                        defaultValue={minDonation}
-                        className="w-full p-3 border rounded-lg"
-                        placeholder="Enter minimum donation amount"
-                        required
-                    />
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">Deadline</label>
-                    <input
-                        type="date"
-                        name="deadline"
-                        defaultValue={deadline}
-                        className="w-full p-3 border rounded-lg"
-                        required
-                    />
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">User Email</label>
-                    <input
-                        type="email"
-                        value={user?.email || ""}
-                        readOnly
-                        className="w-full p-3 border rounded-lg cursor-not-allowed"
-                    />
-                </div>
-                <div className="form-group mb-4">
-                    <label className="block mb-2">User Name</label>
-                    <input
-                        type="text"
-                        value={user?.displayName || ""}
-                        readOnly
-                        className="w-full p-3 border rounded-lg cursor-not-allowed"
-                    />
-                </div>
-
-                <button
-                    type="submit"
-                    className="w-full bg-green-500 text-black font-semibold py-3 rounded-lg hover:bg-green-600 transition"
-                >
+                <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-7 md:mb-10">
                     Update Campaign
-                </button>
-            </form>
+                </h2>
+                <form onSubmit={handleUpdateCamp}>
+                    {/* Form Fields */}
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Image/Thumbnail (URL)</label>
+                        <input
+                            type="text"
+                            name="image"
+                            defaultValue={image}
+                            className="w-full p-3 border rounded-lg"
+                            placeholder="Enter image URL"
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Campaign Title</label>
+                        <input
+                            type="text"
+                            name="title"
+                            defaultValue={title}
+                            className="w-full p-3 border rounded-lg"
+                            placeholder="Enter campaign title"
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Campaign Type</label>
+                        <select
+                            name="type"
+                            className="w-full p-3 border rounded-lg"
+                            defaultValue={type}
+                            required
+                        >
+                            <option value="" disabled>
+                                Select a type
+                            </option>
+                            <option value="personal issue">Personal Issue</option>
+                            <option value="startup">Startup</option>
+                            <option value="business">Business</option>
+                            <option value="creative ideas">Creative Ideas</option>
+                        </select>
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Description</label>
+                        <textarea
+                            name="description"
+                            defaultValue={description}
+                            className="w-full p-3 border rounded-lg"
+                            placeholder="Enter campaign description"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Minimum Donation Amount</label>
+                        <input
+                            type="text"
+                            name="minDonation"
+                            defaultValue={minDonation}
+                            className="w-full p-3 border rounded-lg"
+                            placeholder="Enter minimum donation amount"
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">Deadline</label>
+                        <input
+                            type="date"
+                            name="deadline"
+                            defaultValue={deadline}
+                            className="w-full p-3 border rounded-lg"
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">User Email</label>
+                        <input
+                            type="email"
+                            value={user?.email || ""}
+                            readOnly
+                            className="w-full p-3 border rounded-lg cursor-not-allowed"
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label className="block mb-2">User Name</label>
+                        <input
+                            type="text"
+                            value={user?.displayName || ""}
+                            readOnly
+                            className="w-full p-3 border rounded-lg cursor-not-allowed"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        className="w-full bg-green-500 text-black font-semibold py-3 rounded-lg hover:bg-green-600 transition"
+                    >
+                        Update Campaign
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

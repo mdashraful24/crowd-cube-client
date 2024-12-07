@@ -28,8 +28,8 @@ const RunningCampaigns = () => {
     }
 
     return (
-        <section className="my-16 md:my-16 lg:my-24 px-2 md:px-3">
-            <div className="text-center mb-10">
+        <section className="my-12 md:my-16 lg:my-24 px-2 md:px-3">
+            <div className="text-center mb-7 md:mb-10">
                 <h2 className="text-3xl md:text-4xl text-purple-700 font-bold">Running Campaigns</h2>
             </div>
             <div className="container lg:w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">

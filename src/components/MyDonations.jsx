@@ -27,28 +27,30 @@ const MyDonations = () => {
     }, [user?.email]);
 
     return (
-        <div className="container mx-auto px-4 mt-14 mb-20">
-            {/* Helmet */}
-            <Helmet>
-                <title>My Donations | CrowdCube</title>
-            </Helmet>
+        <div className="px-4 mt-10 md:mt-14 mb-20">
+            <div className="container mx-auto">
+                {/* Helmet */}
+                <Helmet>
+                    <title>My Donations | CrowdCube</title>
+                </Helmet>
 
-            <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-12">My Donations</h2>
-            {loading ? (
-                <div className="flex justify-center items-center min-h-screen">
-                    <span className="loading loading-bars loading-lg"></span>
-                </div>
-            ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-10">
-                    {myDonations.length > 0 ? (
-                        myDonations.map((donation) => (
-                            <DonationCard key={donation._id} donation={donation} />
-                        ))
-                    ) : (
-                        <p className="text-center text-gray-600">You have no donations yet.</p>
-                    )}
-                </div>
-            )}
+                <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-7 md:mb-10">My Donations</h2>
+                {loading ? (
+                    <div className="flex justify-center items-center min-h-screen">
+                        <span className="loading loading-bars loading-lg"></span>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+                        {myDonations.length > 0 ? (
+                            myDonations.map((donation) => (
+                                <DonationCard key={donation._id} donation={donation} />
+                            ))
+                        ) : (
+                            <p className="text-center text-gray-600">You have no donations yet.</p>
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

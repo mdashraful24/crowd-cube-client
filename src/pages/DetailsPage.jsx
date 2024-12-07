@@ -93,13 +93,13 @@ const DetailsPage = () => {
     }
 
     return (
-        <section className="px-3 py-10">
+        <section className="px-3 mt-10 md:mt-14 mb-20">
             {/* Helmet */}
             <Helmet>
                 <title>Details | CrowdCube</title>
             </Helmet>
 
-            <h2 className="text-center text-3xl md:text-4xl text-[#5c0c9e] font-bold mb-10">Campaign Details</h2>
+            <h2 className="text-center text-3xl md:text-4xl text-[#5c0c9e] font-bold mb-8">Campaign Details</h2>
             <div className="container lg:max-w-screen-md mx-auto border rounded-xl hover:shadow-xl p-5">
                 {/* Campaign Image */}
                 <div className="mb-6">
@@ -111,7 +111,7 @@ const DetailsPage = () => {
                 </div>
                 {/* Campaign Details */}
                 <div>
-                    <h2 className="text-3xl font-semibold">{campaign.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-semibold">{campaign.title}</h2>
                     <p className="text-lg mt-2"><strong>Description:</strong> {campaign.description}</p>
                     <div className="mt-2">
                         <p><strong>Type:</strong> {campaign.type}</p>

@@ -44,7 +44,7 @@ const AllCampaigns = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-14 mb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14 mb-20">
             {/* Helmet */}
             <Helmet>
                 <title>All Campaign | CrowdCube</title>
@@ -55,7 +55,7 @@ const AllCampaigns = () => {
             <div className="flex justify-center mb-8">
                 <button
                     onClick={sortBtnToggle}
-                    className="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300"
+                    className="px-3 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300"
                 >
                     Sort Donation Amount: {sortAmounts === "asc" ? "Ascending" : "Descending"}
                 </button>
