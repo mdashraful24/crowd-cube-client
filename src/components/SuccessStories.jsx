@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const SuccessStories = () => {
     return (
-        <section className="mt-20 mb-28">
+        <section className="mt-20 mb-20 md:mb-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Fade direction="up" triggerOnce>
                     <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">Why Choose CrowdCube?</h2>

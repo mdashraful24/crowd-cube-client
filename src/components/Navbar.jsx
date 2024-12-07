@@ -9,12 +9,10 @@ const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
 
-    // Reset dropdownOpen when user changes
     useEffect(() => {
         setDropdownOpen(false);
     }, [user]);
 
-    // Sign out
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -37,7 +35,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="p-2 md:py-3 shadow-md">
+        <div className="p-2 md:py-2 shadow-md">
             <div className="container mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -65,7 +63,7 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <button
                                 href="/"
-                                className="text-3xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide italic"
+                                className="text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide italic"
                             >
                                 CrowdCube
                             </button>
@@ -106,8 +104,8 @@ const Navbar = () => {
                             </div>
                         ) : (
                             <>
-                                <Link to="/login" className="btn btn-primary mr-3">Login</Link>
-                                    <Link to="/register" className="btn btn-success">Register</Link>
+                                    <Link to="/login" className="bg-primary text-xs md:text-base text-white font-medium px-3 md:px-4 py-2 rounded-lg mr-2 md:mr-3 transition-transform duration-500 ease-in-out hover:scale-110">Login</Link>
+                                    <Link to="/register" className="bg-success text-xs md:text-base text-black font-medium px-2 md:px-4 py-2 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
                             </>
                         )}
                         <div className="pl-3 md:pl-5">
