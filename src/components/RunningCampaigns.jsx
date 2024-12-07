@@ -28,7 +28,7 @@ const RunningCampaigns = () => {
     }
 
     return (
-        <section className="my-12 md:my-16 lg:my-24 px-2 md:px-3">
+        <section className="mt-12 mb-16 md:my-16 lg:my-24 px-2 md:px-3">
             <div className="text-center mb-7 md:mb-10">
                 <h2 className="text-3xl md:text-4xl text-purple-700 font-bold">Running Campaigns</h2>
             </div>
@@ -38,12 +38,12 @@ const RunningCampaigns = () => {
                     return (
                         <div
                             key={campaign._id}
-                            className={`card bg-base-100 shadow-sm p-4 border rounded-lg transition-transform duration-500 ${isActive ? "hover:-translate-y-2 hover:shadow-xl" : "opacity-70"
+                            className={`card shadow-sm p-4 border rounded-lg transition-transform duration-500 ${isActive ? "hover:-translate-y-2 hover:shadow-xl" : "opacity-70"
                                 }`}
                         >
                             <figure className="mb-4">
                                 <img
-                                    className="w-full h-72 rounded-md"
+                                    className="w-full h-60 md:h-72 rounded-md"
                                     src={campaign.image}
                                     alt={campaign.title}
                                 />

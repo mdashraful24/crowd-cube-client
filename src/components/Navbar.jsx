@@ -82,12 +82,12 @@ const Navbar = () => {
                                 onMouseLeave={() => setDropdownOpen(false)}
                             >
                                 <img
-                                    className="rounded-full w-12 h-12 object-cover cursor-pointer hover:bg-gray-400 p-1"
+                                    className="rounded-full w-12 h-12 object-cover cursor-pointer hover:bg-gray-300 p-1"
                                     src={user?.photoURL}
                                     alt="User profile"
                                 />
                                 {dropdownOpen && (
-                                    <div className="absolute right-0 mt-2 w-36 shadow-lg z-10 bg-white rounded-lg border">
+                                    <div className="absolute -right-6 mt-2 w-36 shadow-lg z-10 bg-white rounded-lg border">
                                         <div className="py-2 px-3 text-center">
                                             <p className="font-semibold text-sm text-gray-800">
                                                 {user?.displayName || "User"}
@@ -108,7 +108,7 @@ const Navbar = () => {
                                     <Link to="/register" className="bg-success text-xs md:text-base text-black font-medium px-2 md:px-4 py-2 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
                             </>
                         )}
-                        <div className="pl-3 md:pl-5">
+                        <div className="pl-2 md:pl-3">
                             <DarkLightTheme></DarkLightTheme>
                         </div>
                     </div>

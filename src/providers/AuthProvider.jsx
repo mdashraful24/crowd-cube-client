@@ -26,18 +26,18 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    // const googleProvider = new GoogleAuthProvider();
-    // const handleGoogleSignIn = () => {
-    //     return signInWithPopup(auth, googleProvider);
-    // }
-    
     const googleProvider = new GoogleAuthProvider();
-    googleProvider.setCustomParameters({
-        prompt: "select_account",
-    });
     const handleGoogleSignIn = () => {
         return signInWithPopup(auth, googleProvider);
     }
+    
+    // const googleProvider = new GoogleAuthProvider();
+    // googleProvider.setCustomParameters({
+    //     prompt: "select_account",
+    // });
+    // const handleGoogleSignIn = () => {
+    //     return signInWithPopup(auth, googleProvider);
+    // }
 
     const updateUserProfiles = (updatedData) => {
         return updateProfile(auth.currentUser, updatedData);

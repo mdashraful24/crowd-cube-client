@@ -1,51 +1,40 @@
-import { useEffect, useState } from "react";
-import { CiLight } from "react-icons/ci";
-import { MdOutlineDarkMode } from "react-icons/md";
+import { useState, useEffect } from "react";
+import { IoMoonSharp } from "react-icons/io5";
+import { MdWbSunny } from "react-icons/md";
 
 const DarkLightTheme = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-    // Set the initial theme based on localStorage
     useEffect(() => {
-        const selectedTheme = localStorage.getItem("selectedTheme");
-        if (selectedTheme === "dark") {
-            setIsDarkMode(true);
-            setDark();
+        const selectedByTheme = localStorage.getItem("selectedTheme");
+        if (selectedByTheme === "dark") {
+            document.body.setAttribute("data-theme", "dark");
+            setIsDarkTheme(true);
+        } else {
+            document.body.setAttribute("data-theme", "light");
+            setIsDarkTheme(false);
         }
     }, []);
 
-    const setDark = () => {
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("selectedTheme", "dark");
-    };
-
-    const setLight = () => {
-        document.body.setAttribute("data-theme", "light");
-        localStorage.setItem("selectedTheme", "light");
-    };
-
-    const toggleTheme = (e) => {
-        if (e.target.checked) {
-            setDark();
-            setIsDarkMode(true);
+    const toggleTheThemes = () => {
+        if (isDarkTheme) {
+            // Light mode
+            document.body.setAttribute("data-theme", "light");
+            localStorage.setItem("selectedTheme", "light");
+            setIsDarkTheme(false);
         } else {
-            setLight();
-            setIsDarkMode(false);
+            // Dark mode
+            document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("selectedTheme", "dark");
+            setIsDarkTheme(true);
         }
     };
 
     return (
         <div className="dark_mode">
-            <input
-                className="dark_mode_input"
-                type="checkbox"
-                id="darkmode-toggle"
-                onChange={toggleTheme}
-                checked={isDarkMode}
-            />
-            <label className="dark_mode_label" htmlFor="darkmode-toggle">
-                <span className="icon">{isDarkMode ? <MdOutlineDarkMode /> : <CiLight />}</span>
-            </label>
+            <button onClick={toggleTheThemes} className="text-lg md:text-xl rounded-full mt-1.5">
+                {isDarkTheme ? <MdWbSunny className="text-yellow-500" /> : <IoMoonSharp />}
+            </button>
         </div>
     );
 };

@@ -42,15 +42,15 @@ const Banner = () => {
                     <img
                         src={image1}
                         alt="Crowdfunding"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
+                        className="w-full h-[250px] md:h-[500px] lg:h-[660px] rounded-xl"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
+                            <h2 className="text-xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Empower Ideas, Transform Lives
                             </h2>
-                            <p className="text-white text-sm sm:text-lg">
-                                Start your crowdfunding journey to bring innovative projects to life and create meaningful impact.
+                            <p className="text-white text-sm sm:text-lg md:w-4/5 lg:w-1/2 mx-auto">
+                                Start your crowdfunding journey to bring innovative projects to life and create meaningful impact. Together, we can fuel creativity, solve challenges, and turn ideas into lasting legacies that benefit communities around the world.
                             </p>
                         </div>
                     </div>
@@ -60,15 +60,15 @@ const Banner = () => {
                     <img
                         src={image2}
                         alt="Community"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
+                        className="w-full h-[250px] md:h-[500px] lg:h-[660px] rounded-xl"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
+                            <h2 className="text-xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Join a Supportive Community
                             </h2>
-                            <p className="text-white text-sm sm:text-lg">
-                                Connect with like-minded individuals and back initiatives that align with your values.
+                            <p className="text-white text-sm sm:text-lg md:w-4/5 lg:w-1/2 mx-auto">
+                                Connect with like-minded individuals and back initiatives that align with your values. Together, we create a collective force for positive change, turning passion into action and transforming ideas into reality.
                             </p>
                         </div>
                     </div>
@@ -78,15 +78,15 @@ const Banner = () => {
                     <img
                         src={image3}
                         alt="Impact"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-xl"
+                        className="w-full h-[250px] md:h-[500px] lg:h-[660px] rounded-xl"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center px-4 rounded-xl">
                         <div>
-                            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
+                            <h2 className="text-xl sm:text-4xl font-bold text-white mb-4 md:mb-6">
                                 Make a Lasting Impact
                             </h2>
-                            <p className="text-white text-sm sm:text-lg">
-                                Every contribution helps dreams take flight be a part of something extraordinary.
+                            <p className="text-white text-sm sm:text-lg md:w-4/5 lg:w-1/2 mx-auto">
+                                Every contribution helps dreams take flight be a part of something extraordinary. Your support not only propels innovative projects forward but also empowers individuals to bring their visions to life and that will inspire future generations.
                             </p>
                         </div>
                     </div>
