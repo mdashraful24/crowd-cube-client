@@ -2,8 +2,8 @@ import instagram from '../../src/assets/instagram.png'
 
 const Footer = () => {
     return (
-        <div className="pb-2 shadow-inner border-t border-[#5c0c9e]">
-            <footer className="footer container mx-auto md:justify-between lg:justify-evenly pt-10 px-8">
+        <div className="pb-2 shadow-inner border-t">
+            <footer className="footer container mx-auto grid grid-cols-2 md:grid-cols-3 justify-items-center gap-8 pt-12 pb-2 px-8">
                 <nav>
                     <h6 className="text-lg uppercase font-bold">Services</h6>
                     <a className="link link-hover text-base">Projects</a>
@@ -17,20 +17,20 @@ const Footer = () => {
                     <a className="link link-hover text-base">Careers</a>
                     <a className="link link-hover text-base">Blog</a>
                 </nav>
-                <nav>
+                <nav className='pl-3 md:pl-0'>
                     <h6 className="text-lg uppercase font-bold">Legal</h6>
                     <a className="link link-hover text-base">Terms of use</a>
                     <a className="link link-hover text-base">Privacy policy</a>
                     <a className="link link-hover text-base">Cookie policy</a>
                 </nav>
             </footer>
-            <footer className="container mx-auto text-base-content px-8 md:px-10 lg:px-24 py-4 flex flex-col-reverse md:text-center items-start md:items-center justify-between gap-5">
+
+            <footer className="container mx-auto text-base-content px-8 md:px-10 lg:px-24 py-4 flex flex-col-reverse text-center items-center justify-between gap-5">
                 <aside className="grid-flow-col items-center">
-                    <p>
+                    <p className='space-y-0.5'>
                         <span className="text-3xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide">CrowdCube</span>
                         <br />
-                        Innovating solutions for the future since 2000.
-                        {/* Copyright */}
+                        <p>Innovating solutions for the future since 2000.</p>
                         <p>&copy; {new Date().getFullYear()} CrowdCube. All rights reserved.</p>
                     </p>
                 </aside>

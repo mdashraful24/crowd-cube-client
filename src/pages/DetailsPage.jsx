@@ -34,12 +34,13 @@ const DetailsPage = () => {
             fetch(`https://mw-assignments10-server.vercel.app/myDonations?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    const alreadyDonated = data.some((donation) => donation.campaignId === campaign._id);
+                    const alreadyDonated = data.some((donation) => donation.campaignId === campaign._id && donation.userEmail === user.email);
                     setHasDonated(alreadyDonated);
                 })
                 .catch((error) => console.error("Error fetching donations:", error));
         }
     }, [user?.email, campaign?._id]);
+
 
     const handleDonate = () => {
         if (hasDonated) {

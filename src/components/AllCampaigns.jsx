@@ -44,7 +44,7 @@ const AllCampaigns = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14 mb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14 mb-20 min-h-80">
             {/* Helmet */}
             <Helmet>
                 <title>All Campaign | CrowdCube</title>
@@ -101,3 +101,5 @@ const AllCampaigns = () => {
 };
 
 export default AllCampaigns;
+
+// border - r border - gray - 400

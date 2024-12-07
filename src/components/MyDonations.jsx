@@ -16,9 +16,9 @@ const MyDonations = () => {
                     const data = await response.json();
                     const userDonations = data.filter((donation) => donation.userEmail === user.email);
                     setMyDonations(userDonations);
+                    setLoading(false);
                 } catch (error) {
                     console.error("Error fetching donations:", error);
-                } finally {
                     setLoading(false);
                 }
             }
@@ -26,8 +26,16 @@ const MyDonations = () => {
         fetchUserDonations();
     }, [user?.email]);
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <span className="loading loading-bars loading-lg"></span>
+            </div>
+        );
+    }
+
     return (
-        <div className="px-4 mt-10 md:mt-14 mb-20">
+        <div className="px-4 mt-10 md:mt-14 mb-20 min-h-80">
             <div className="container mx-auto">
                 {/* Helmet */}
                 <Helmet>
@@ -35,20 +43,14 @@ const MyDonations = () => {
                 </Helmet>
 
                 <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-7 md:mb-10">My Donations</h2>
-                {loading ? (
-                    <div className="flex justify-center items-center min-h-screen">
-                        <span className="loading loading-bars loading-lg"></span>
+                {myDonations.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+                        {myDonations.map((donation) => (
+                            <DonationCard key={donation._id} donation={donation} />
+                        ))}
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
-                        {myDonations.length > 0 ? (
-                            myDonations.map((donation) => (
-                                <DonationCard key={donation._id} donation={donation} />
-                            ))
-                        ) : (
-                            <p className="text-center text-gray-600">You have no donations yet.</p>
-                        )}
-                    </div>
+                    <p className="text-center text-gray-600">You have no donations yet.</p>
                 )}
             </div>
         </div>
