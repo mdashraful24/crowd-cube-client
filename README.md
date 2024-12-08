@@ -1,8 +1,28 @@
-# React + Vite
+Assignment Category: Tulip
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Name: CrowdCube: A Crowd Funding Application
 
-Currently, two official plugins are available:
+Project Theme:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A crowdfunding website is a platform where individuals and organizations can raise funds for various projects, ideas, or causes by inviting others to contribute financially. These initiatives can range from personal needs (such as medical expenses) to creative endeavors (like producing a film or developing an app) and entrepreneurial ventures (like launching a new product or startup).
+
+🚀 Key Features:
+
+    •	Running Campaigns
+    •	All Campaigns
+    •	Add New Campaign
+    •	My Campaigns
+    •	My Donations
+    •	Delete Campaign
+    •	Update Campaign
+
+🛠️ Technologies Used:
+
+    •	Frontend: React.js, Tailwind CSS, DaisyUI
+    •	Backend: Node.js, Express.js
+    •	Database: MongoDB
+
+Live Link:
+
+    •	https://crowdcube-c99dd.web.app/
+    •	https://crowdcube-c99dd.firebaseapp.com/
