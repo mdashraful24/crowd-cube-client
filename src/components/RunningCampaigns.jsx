@@ -32,7 +32,7 @@ const RunningCampaigns = () => {
             <div className="text-center mb-7 md:mb-10">
                 <h2 className="text-3xl md:text-4xl text-purple-700 font-bold">Running Campaigns</h2>
             </div>
-            <div className="container lg:w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
+            <div className="container lg:w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
                 {running.slice(0, 6).map((campaign) => {
                     const isActive = new Date(campaign.deadline) >= new Date();
                     return (
@@ -71,7 +71,8 @@ const RunningCampaigns = () => {
                                 {isActive && (
                                     <div className="mt-4">
                                         <Link to={`campaign/${campaign._id}`}>
-                                            <button className="text-white w-full text-lg px-5 py-2 rounded-full bg-[#3f0c69] shadow-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-red-700 hover:to-[#5c0c9e]">
+                                            <button className="btn text-base text-white font-medium w-full rounded-full bg-purple-900 hover:bg-purple-950 shadow-xl transition-all duration-500"
+                                            >
                                                 See More
                                             </button>
                                         </Link>
