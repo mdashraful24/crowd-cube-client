@@ -8,21 +8,22 @@ A crowdfunding website is a platform where individuals and organizations can rai
 
 🚀 Key Features:
 
-    •	Running Campaigns
-    •	All Campaigns
-    •	Add New Campaign
-    •	My Campaigns
-    •	My Donations
-    •	Delete Campaign
-    •	Update Campaign
+    • Running Campaigns
+    • All Campaigns
+    • Add New Campaign
+    • My Campaigns
+    • My Donations
+    • Delete Campaign
+    • Update Campaign
 
 🛠️ Technologies Used:
 
-    •	Frontend: React.js, Tailwind CSS, DaisyUI
-    •	Backend: Node.js, Express.js
-    •	Database: MongoDB
+    • Frontend: React.js, Tailwind CSS, DaisyUI
+    • Backend: Node.js, Express.js
+    • Database: MongoDB
 
 Live Link:
 
-    •	https://crowdcube-c99dd.web.app/
-    •	https://crowdcube-c99dd.firebaseapp.com/
+    • https://crowdcube-c99dd.web.app/
+    
+    • https://crowdcube-c99dd.firebaseapp.com/
