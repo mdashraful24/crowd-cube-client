@@ -158,7 +158,7 @@ const UpdateCampaign = () => {
                     <div className="form-group mb-4">
                         <label className="block mb-2">Minimum Donation Amount</label>
                         <input
-                            type="text"
+                            type="number"
                             name="minDonation"
                             defaultValue={minDonation}
                             className="w-full p-3 border rounded-lg"
@@ -196,7 +196,8 @@ const UpdateCampaign = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-green-500 text-black font-semibold py-3 rounded-lg hover:bg-green-600 transition"
+                        className="btn text-base text-white font-medium shadow-md w-full rounded-md transition-all duration-500"
+                        style={{ background: "linear-gradient(to right, #000066 0%, #660066 100%)" }}
                     >
                         Update Campaign
                     </button>

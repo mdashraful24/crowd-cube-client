@@ -50,7 +50,7 @@ const SuccessStories = () => {
                         <p className="text-lg mb-5">At CrowdCube, we bring whether it's creative ideas, business ventures, startups, or even solving personal issues, our platform empowers people to turn ambitions into reality. Together, we can back initiatives that matter and make a lasting impact. If our mission inspires you, we invite you to explore our campaigns and to form a brighter future.</p>
                         <a
                             href="/campaigns"
-                            className="inline-block px-3 py-3 bg-purple-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300"
+                            className="inline-block px-3 py-3 bg-purple-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800 hover:scale-105 transition-all duration-500"
                         >
                             View All Campaigns
                         </a>

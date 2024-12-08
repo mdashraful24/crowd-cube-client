@@ -55,7 +55,7 @@ const AllCampaigns = () => {
             <div className="flex justify-center mb-8">
                 <button
                     onClick={sortBtnToggle}
-                    className="px-3 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300"
+                    className="btn bg-purple-800 text-base text-white rounded-md hover:bg-purple-900 focus:ring-purple-300 transition-all duration-500"
                 >
                     Sort Donation Amount: {sortAmounts === "asc" ? "Ascending" : "Descending"}
                 </button>

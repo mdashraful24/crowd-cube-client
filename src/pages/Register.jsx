@@ -32,7 +32,6 @@ const Register = () => {
         setError("");
         createNewUser(email, password)
             .then(result => {
-
                 const newUser = { name, email, photo }
                 // save new user info to the database
                 fetch('https://mw-assignments10-server.vercel.app/users', {

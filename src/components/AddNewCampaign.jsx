@@ -134,7 +134,7 @@ const AddNewCampaign = () => {
                     <div className="form-group mb-4">
                         <label className="block mb-2">Minimum Donation Amount</label>
                         <input
-                            type="text"
+                            type="number"
                             name="minDonation"
                             className="w-full p-3 border rounded-lg"
                             placeholder="Enter minimum donation amount"
@@ -174,7 +174,7 @@ const AddNewCampaign = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="btn w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
+                        className="btn w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 hover:scale-105 transition-all duration-500"
                     >
                         Add Campaign
                     </button>

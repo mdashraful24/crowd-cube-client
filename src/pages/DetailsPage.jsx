@@ -100,8 +100,8 @@ const DetailsPage = () => {
                 <title>Details | CrowdCube</title>
             </Helmet>
 
-            <h2 className="text-center text-3xl md:text-4xl text-[#5c0c9e] font-bold mb-8">Campaign Details</h2>
-            <div className="container lg:max-w-screen-md mx-auto border rounded-xl hover:shadow-xl p-5">
+            <h2 className="text-center text-3xl md:text-4xl text-purple-700 font-bold mb-8">Campaign Details</h2>
+            <div className="container lg:max-w-screen-md mx-auto border border-purple-900 rounded-xl shadow-lg hover:shadow-xl p-7">
                 {/* Campaign Image */}
                 <div className="mb-6">
                     <img
@@ -114,7 +114,7 @@ const DetailsPage = () => {
                 <div>
                     <h2 className="text-2xl md:text-3xl font-semibold">{campaign.title}</h2>
                     <p className="text-lg mt-2"><strong>Description:</strong> {campaign.description}</p>
-                    <div className="mt-2">
+                    <div className="mt-2 space-y-2">
                         <p><strong>Type:</strong> {campaign.type}</p>
                         <p><strong>Min Donation:</strong> ${campaign.minDonation}</p>
                         <p><strong>Deadline:</strong> {new Date(campaign.deadline).toLocaleDateString()}</p>
@@ -122,7 +122,7 @@ const DetailsPage = () => {
                     <div className="mt-6">
                         <button
                             onClick={handleDonate}
-                            className="btn text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all duration-200 w-full rounded-md"
+                            className="btn text-base text-white font-medium bg-purple-700 hover:bg-purple-800 shadow-md w-full rounded-md transition-all duration-500"
                         >
                             Donate Now
                         </button>
