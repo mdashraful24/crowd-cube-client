@@ -199,7 +199,7 @@ const UpdateCampaign = () => {
                         className="btn text-base text-white font-medium shadow-md w-full rounded-md transition-all duration-500"
                         style={{ background: "linear-gradient(to right, #000066 0%, #660066 100%)" }}
                     >
-                        Update Campaign
+                        Update
                     </button>
                 </form>
             </div>

@@ -174,9 +174,9 @@ const AddNewCampaign = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="btn w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 hover:scale-105 transition-all duration-500"
+                        className="btn w-full bg-green-600 text-base text-white py-3 rounded-lg hover:bg-green-700 transition-all duration-500"
                     >
-                        Add Campaign
+                        Add
                     </button>
                 </form>
             </div>

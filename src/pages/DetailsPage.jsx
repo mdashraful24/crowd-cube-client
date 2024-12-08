@@ -124,7 +124,7 @@ const DetailsPage = () => {
                             onClick={handleDonate}
                             className="btn text-base text-white font-medium bg-purple-700 hover:bg-purple-800 shadow-md w-full rounded-md transition-all duration-500"
                         >
-                            Donate Now
+                            Donate
                         </button>
                     </div>
                 </div>
