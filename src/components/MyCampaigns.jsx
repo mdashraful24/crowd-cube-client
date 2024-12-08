@@ -96,7 +96,7 @@ const MyCampaigns = () => {
                                         <div className="flex flex-row justify-center items-center gap-3">
                                             <Link to={`/updateCampaign/${myCampaign._id}`}>
                                                 <button
-                                                    className="px-3 py-2 text-white rounded-md focus:outline-none focus:ring-2 hover:scale-105 transition-all duration-300"
+                                                    className="px-4 py-2 text-white rounded-md focus:outline-none focus:ring-2 hover:scale-105 transition-all duration-300"
                                                     style={{ background: "linear-gradient(to right, #000066 0%, #660066 100%)" }}
                                                 >
                                                     Update
