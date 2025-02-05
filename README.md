@@ -53,7 +53,7 @@
 1. **Clone the repository**
    ```sh
    git clone https://github.com/mdashraful24/crowd-cube-client.git
-   cd crowd-cube-clien
+   cd crowd-cube-client
    ```
 2. **Install dependencies**
    ```sh
