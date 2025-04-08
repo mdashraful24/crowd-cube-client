@@ -35,7 +35,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="p-2 md:py-2 shadow-md">
+        <div className="shadow-md">
             <div className="container mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
