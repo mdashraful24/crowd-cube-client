@@ -9,7 +9,7 @@ const SuccessStories = () => {
                 <Fade direction="up" triggerOnce>
                     <h2 className="text-3xl md:text-4xl text-purple-700 font-bold text-center mb-10">Why Choose CrowdCube?</h2>
                 </Fade>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
                     <div className="text-center md:text-left p-6 shadow-lg rounded-lg border border-[#5c0c9e]">
                         <Fade direction="left" triggerOnce>
                             <h3 className="text-xl text-red-500 font-semibold mb-4">

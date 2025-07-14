@@ -31,6 +31,12 @@ const Navbar = () => {
             <li><NavLink to="/addCampaign">Add New Campaign</NavLink></li>
             <li><NavLink to="/myCampaign">My Campaign</NavLink></li>
             <li><NavLink to="/myDonations">My Donations</NavLink></li>
+            <li className="lg:hidden block">
+                <div>
+                    Mode
+                    <DarkLightTheme></DarkLightTheme>
+                </div>
+            </li>
         </>
     );
 
@@ -104,11 +110,11 @@ const Navbar = () => {
                             </div>
                         ) : (
                             <>
-                                    <Link to="/login" className="bg-primary text-xs md:text-base text-white font-medium px-3 md:px-4 py-2 rounded-lg mr-2 md:mr-3 transition-transform duration-500 ease-in-out hover:scale-110">Login</Link>
-                                    <Link to="/register" className="bg-success text-xs md:text-base text-black font-medium px-2 md:px-4 py-2 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
+                                    <Link to="/login" className="bg-primary text-xs md:text-base text-white font-medium px-2 py-1 md:px-3 md:py-2 rounded-lg mr-2 md:mr-3 transition-transform duration-500 ease-in-out hover:scale-110">Login</Link>
+                                    <Link to="/register" className="bg-success text-xs md:text-base text-black font-medium px-2 py-1 md:px-3 md:py-2 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
                             </>
                         )}
-                        <div className="pl-2 md:pl-3">
+                        <div className="pl-2 md:pl-3 hidden lg:block">
                             <DarkLightTheme></DarkLightTheme>
                         </div>
                     </div>
