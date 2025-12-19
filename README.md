@@ -41,6 +41,39 @@
 
 ---
 
+# File Tree: crowd-cube-client-polishing
+
+```
+│   ├── components
+│   │   ├── AddNewCampaign.jsx
+│   │   ├── AllCampaigns.jsx
+│   │   ├── Banner.jsx
+│   │   ├── DarkLightTheme.jsx
+│   │   ├── DonationCard.jsx
+│   │   ├── ErrorPage.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Home.jsx
+│   │   ├── HowItWorks.jsx
+│   │   ├── MyCampaigns.jsx
+│   │   ├── MyDonations.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── RunningCampaigns.jsx
+│   │   ├── SuccessStories.jsx
+│   │   └── UpdateCampaign.jsx
+│   ├── layouts
+│   │   └── HomeLayout.jsx
+│   ├── pages
+│   │   ├── DetailsPage.jsx
+│   │   ├── Loading.jsx
+│   │   ├── Login.jsx
+│   │   └── Register.jsx
+│   ├── providers
+│   │   └── AuthProvider.jsx
+│   ├── routes
+│   │   ├── PrivateRoute.jsx
+│   │   └── router.jsx
+```
+
 ## 🛠 Installation
 
 ### Prerequisites
