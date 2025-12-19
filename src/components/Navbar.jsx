@@ -43,7 +43,7 @@ const Navbar = () => {
     return (
         <div className="shadow-md">
             <div className="container mx-auto">
-                <div className="navbar">
+                <div className="navbar py-0">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost pl-0 lg:hidden">
@@ -67,16 +67,16 @@ const Navbar = () => {
                             </ul>
                         </div>
                         <div className="flex items-center">
-                            <button
+                            <a
                                 href="/"
                                 className="text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-[#843c94] via-[#5e1e70] to-[#f97316] text-transparent bg-clip-text tracking-wide italic"
                             >
                                 CrowdCube
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 text-base">
+                        <ul className="menu menu-horizontal px-1 font-medium">
                             {links}
                         </ul>
                     </div>
@@ -110,11 +110,11 @@ const Navbar = () => {
                             </div>
                         ) : (
                             <>
-                                    <Link to="/login" className="bg-primary text-xs md:text-base text-white font-medium px-2 py-1 md:px-3 md:py-2 rounded-lg mr-2 md:mr-3 transition-transform duration-500 ease-in-out hover:scale-110">Login</Link>
-                                    <Link to="/register" className="bg-success text-xs md:text-base text-black font-medium px-2 py-1 md:px-3 md:py-2 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
+                                <Link to="/login" className="bg-primary text-xs md:text-base text-white font-medium px-2 py-1 md:px-3 md:py-1.5 rounded-lg mr-2 md:mr-3 transition-transform duration-500 ease-in-out hover:scale-110">Login</Link>
+                                <Link to="/register" className="bg-green-700 text-xs md:text-base text-white font-medium px-2 py-1 md:px-3 md:py-1.5 rounded-lg transition-transform duration-500 ease-in-out hover:scale-110">Register</Link>
                             </>
                         )}
-                        <div className="pl-2 md:pl-3 hidden lg:block">
+                        <div className="pl-2.5 hidden lg:block">
                             <DarkLightTheme></DarkLightTheme>
                         </div>
                     </div>

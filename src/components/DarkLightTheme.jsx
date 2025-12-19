@@ -32,8 +32,8 @@ const DarkLightTheme = () => {
 
     return (
         <div className="dark_mode">
-            <button onClick={toggleTheThemes} className="text-lg md:text-xl rounded-full mt-1.5">
-                {isDarkTheme ? <MdWbSunny className="text-yellow-500" /> : <IoMoonSharp />}
+            <button onClick={toggleTheThemes} className="mt-1.5">
+                {isDarkTheme ? <MdWbSunny className="text-yellow-500 w-6 h-6 lg:w-8 lg:h-8 hover:bg-gray-50 p-1 rounded-full" /> : <IoMoonSharp className="w-6 h-6 lg:w-8 lg:h-8 hover:bg-gray-200 p-1 rounded-full"/>}
             </button>
         </div>
     );
