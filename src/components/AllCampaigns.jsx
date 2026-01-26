@@ -9,7 +9,7 @@ const AllCampaigns = () => {
 
     const sortDonationAmounts = (order = "asc") => {
         setLoading(true);
-        fetch("https://mw-assignments10-server.vercel.app/campaigns/sortedByDonation")
+        fetch("http://localhost:5000/campaigns/sortedByDonation")
             .then((res) => res.json())
             .then((data) => {
                 const sortedData = [...data].sort((a, b) =>

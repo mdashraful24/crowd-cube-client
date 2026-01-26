@@ -6,7 +6,7 @@ const RunningCampaigns = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://mw-assignments10-server.vercel.app/running")
+        fetch("http://localhost:5000/running")
             .then((res) => res.json())
             .then((data) => {
                 setRunning(data);

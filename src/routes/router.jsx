@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <AddNewCampaign></AddNewCampaign>
                 </PrivateRoute>,
-                loader: () => fetch('https://mw-assignments10-server.vercel.app/users')
+                loader: () => fetch('http://localhost:5000/users') // https://crowd-cube-server-seven.vercel.app
             },
             {
                 path: "myCampaign",
@@ -57,14 +57,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <DetailsPage></DetailsPage>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://mw-assignments10-server.vercel.app/running/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/running/${params.id}`)
             },
             {
                 path: "updateCampaign/:id",
                 element: <PrivateRoute>
                     <UpdateCampaign></UpdateCampaign>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://mw-assignments10-server.vercel.app/addCampaign/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/addCampaign/${params.id}`)
             }
         ],
     },

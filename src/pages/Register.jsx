@@ -34,7 +34,7 @@ const Register = () => {
             .then(result => {
                 const newUser = { name, email, photo }
                 // save new user info to the database
-                fetch('https://mw-assignments10-server.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

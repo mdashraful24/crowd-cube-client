@@ -13,7 +13,7 @@ const DetailsPage = () => {
     const [isDeadlinePassed, setIsDeadlinePassed] = useState(false);
 
     useEffect(() => {
-        fetch(`https://mw-assignments10-server.vercel.app/running/${id}`)
+        fetch(`http://localhost:5000/running/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setCampaign(data);
@@ -31,7 +31,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (user?.email && campaign?._id) {
-            fetch(`https://mw-assignments10-server.vercel.app/myDonations?email=${user.email}`)
+            fetch(`http://localhost:5000/myDonations?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
                     const alreadyDonated = data.some((donation) => donation.campaignId === campaign._id && donation.userEmail === user.email);
@@ -64,7 +64,7 @@ const DetailsPage = () => {
             userName: user.displayName || "Anonymous",
         };
 
-        fetch("https://mw-assignments10-server.vercel.app/myDonations", {
+        fetch("http://localhost:5000/myDonations", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -10,7 +10,7 @@ const MyCampaigns = () => {
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        fetch("https://mw-assignments10-server.vercel.app/addCampaign")
+        fetch("http://localhost:5000/addCampaign")
             .then((res) => res.json())
             .then((data) => {
                 const userCampaigns = data.filter(campaign => campaign.userEmail === user.email);
@@ -34,7 +34,7 @@ const MyCampaigns = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://mw-assignments10-server.vercel.app/addCampaign/${_id}`, {
+                fetch(`http://localhost:5000/addCampaign/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
