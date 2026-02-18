@@ -12,7 +12,7 @@ const MyDonations = () => {
         const fetchUserDonations = async () => {
             if (user?.email) {
                 try {
-                    const response = await fetch(`http://localhost:5000/myDonations`);
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/myDonations`);
                     const data = await response.json();
                     const userDonations = data.filter((donation) => donation.userEmail === user.email);
                     setMyDonations(userDonations);

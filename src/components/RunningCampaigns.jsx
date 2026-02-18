@@ -6,7 +6,7 @@ const RunningCampaigns = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/running")
+        fetch(`${import.meta.env.VITE_API_URL}/running`)
             .then((res) => res.json())
             .then((data) => {
                 setRunning(data);

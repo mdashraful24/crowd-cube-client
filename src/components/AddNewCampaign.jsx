@@ -46,7 +46,7 @@ const AddNewCampaign = () => {
             return;
         }
 
-        fetch("http://localhost:5000/addCampaign", {
+        fetch(`${import.meta.env.VITE_API_URL}/addCampaign`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

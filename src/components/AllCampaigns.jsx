@@ -9,7 +9,7 @@ const AllCampaigns = () => {
 
     const sortDonationAmounts = (order = "asc") => {
         setLoading(true);
-        fetch("http://localhost:5000/campaigns/sortedByDonation")
+        fetch(`${import.meta.env.VITE_API_URL}/campaigns/sortedByDonation`)
             .then((res) => res.json())
             .then((data) => {
                 const sortedData = [...data].sort((a, b) =>

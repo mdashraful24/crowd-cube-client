@@ -34,7 +34,7 @@ const Register = () => {
             .then(result => {
                 const newUser = { name, email, photo }
                 // save new user info to the database
-                fetch('http://localhost:5000/users', {
+                fetch(`${import.meta.env.VITE_API_URL}/users`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
